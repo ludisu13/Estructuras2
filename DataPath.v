@@ -2,21 +2,24 @@ module DataPath
 (
 	input wire b_sel,
 	input wire a_sel,
+	input wire add_sel,
 	input wire prod_sel,
 	input wire [31:0]Data_A,
 	input wire [31:0]Data_B,
 	input wire Shift_Enable,
 	input wire Clock,
 	input wire Reset,
-	output reg Prod,
-	output wire oB_LSB
+	output reg [63:0]Prod,
+	output reg oB_LSB
 );
 
 //-------------PARA B-----------------//
 wire [31:0]Mux_B_Out;
 wire [31:0]Reg_B_Out;
 wire [31:0]Shifted_B;
-assign oB_LSB= Reg_B_Out[0];
+
+always @(Reg_B_Out[0])
+	oB_LSB= Reg_B_Out[0];
 
 MUX #(32) Mux_B
 (
@@ -86,25 +89,29 @@ MUX #(64) Mux_Prod1
 	.Out(Mux_Prod_Out)
 );
 
+wire [63:0]Product;
+always @ (Product)
+	Prod=Product;
+	
 FFD #(64) Reg_Prod
 (
 	.Clock(Clock),
 	.Reset(Reset),
 	.Enable(1),
 	.D(Mux_Prod_Out),
-	.Q(Prod)
+	.Q(Product)
 );
 
 ADDER Adder_Prod
 (
-	.Data_A(Prod),
-	.Data_B(Reg_A_Out),
+	.Data_A(Reg_A_Out),
+	.Data_B(Prod),
 	.Result(Add_Out)
 );
 
 MUX #(64) Mux_Prod0
 (
-	.Select(Data_B[0]),
+	.Select(add_sel),
 	.Data_A(Add_Out),
 	.Data_B(Prod),
 	.Out(Sum_Prod)
@@ -121,7 +128,7 @@ module MUX #(parameter SIZE=32)
 	output reg [SIZE-1:0] Out
 );
 
-always 
+always @(Select)
 	begin
 		if(Select==0)
 			Out=Data_A;
@@ -176,7 +183,7 @@ module Shift_Register_Left
 (
 	input wire [31:0]Data,
 	input wire Enable,
-	output wire [31:0]Shifted_Dat
+	output reg [31:0]Shifted_Data
 );
 	
 	always @ (Enable )
@@ -191,9 +198,9 @@ module ADDER
 (
 	input wire [31:0]Data_A,
 	input wire [63:0]Data_B,
-	output wire [63:0]Result
+	output reg [63:0]Result
 );
-	always
+	always @(Data_A or Data_B)
 		begin
 			Result = Data_B + Data_A;
 		end
