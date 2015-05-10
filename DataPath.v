@@ -1,92 +1,3 @@
-///////////////////MUX//////////////////
-module MUX #(parameter SIZE=32)
-(
-	input wire Select,
-	input wire [SIZE-1:0]Data_A,
-	input wire [SIZE-1:0]Data_B,
-	output reg [SIZE-1:0] Out
-);
-
-always 
-	begin
-		if(Select==0)
-			Out=Data_A;
-		else if (Select==1)
-			Out=Data_B;
-	end
-
-endmodule
-
-///////////////REGISTER///////////////
-module FFD # ( parameter SIZE=32 )
-(
-	input wire				Clock,
-	input wire				Reset,
-	input wire				Enable,
-	input wire [SIZE-1:0]	D,
-	output reg [SIZE-1:0]	Q
-);
-
-
-always @ (posedge Clock) 
-begin
-	if ( Reset )
-		Q <= 0;
-	else
-	begin	
-		if (Enable) 
-			Q <= D; 
-	end	
- 
-end
-
-endmodule
-
-////////////////SHIFT REGISTER RIGHT//////////
-module Shift_Register_Right
-(
-	input wire [31:0]Data,
-	input wire Enable,
-	output reg [31:0]Shifted_Data
-);
-	
-	always @ (Enable)
-		begin
-			Shifted_Data = Data>>1;
-		end
-
-endmodule
-
-////////////SHIFT REGISTER LEFT//////////////
-module Shift_Register_Left
-(
-	input wire [31:0]Data,
-	input wire Enable,
-	output wire [31:0]Shifted_Dat
-);
-	
-	always @ (Enable )
-		begin
-			Shifted_Data = Data<<1;
-		end
-
-endmodule
-
-////////////ADDER///////////////////////////
-module ADDER
-(
-	input wire [31:0]Data_A,
-	input wire [63:0]Data_B,
-	output wire [63:0]Result
-);
-	always
-		begin
-			Result = Data_B + Data_A;
-		end
-endmodule
-
-
-//---------------DATAPATH-------------------//
 module DataPath
 (
 	input wire b_sel,
@@ -201,3 +112,89 @@ MUX #(64) Mux_Prod0
 endmodule
 
 
+///////////////////MUX//////////////////
+module MUX #(parameter SIZE=32)
+(
+	input wire Select,
+	input wire [SIZE-1:0]Data_A,
+	input wire [SIZE-1:0]Data_B,
+	output reg [SIZE-1:0] Out
+);
+
+always 
+	begin
+		if(Select==0)
+			Out=Data_A;
+		else if (Select==1)
+			Out=Data_B;
+	end
+
+endmodule
+
+///////////////REGISTER///////////////
+module FFD # ( parameter SIZE=32 )
+(
+	input wire				Clock,
+	input wire				Reset,
+	input wire				Enable,
+	input wire [SIZE-1:0]	D,
+	output reg [SIZE-1:0]	Q
+);
+
+
+always @ (posedge Clock) 
+begin
+	if ( Reset )
+		Q <= 0;
+	else
+	begin	
+		if (Enable) 
+			Q <= D; 
+	end	
+ 
+end
+
+endmodule
+
+////////////////SHIFT REGISTER RIGHT//////////
+module Shift_Register_Right
+(
+	input wire [31:0]Data,
+	input wire Enable,
+	output reg [31:0]Shifted_Data
+);
+	
+	always @ (Enable)
+		begin
+			Shifted_Data = Data>>1;
+		end
+
+endmodule
+
+////////////SHIFT REGISTER LEFT//////////////
+module Shift_Register_Left
+(
+	input wire [31:0]Data,
+	input wire Enable,
+	output wire [31:0]Shifted_Dat
+);
+	
+	always @ (Enable )
+		begin
+			Shifted_Data = Data<<1;
+		end
+
+endmodule
+
+////////////ADDER///////////////////////////
+module ADDER
+(
+	input wire [31:0]Data_A,
+	input wire [63:0]Data_B,
+	output wire [63:0]Result
+);
+	always
+		begin
+			Result = Data_B + Data_A;
+		end
+endmodule
