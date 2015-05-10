@@ -6,7 +6,7 @@ module BancoPruebas;
 wire Clock,Reset,wAck,wValidData;
 wire oShift,oA_Sel,oB_Sel, oProduct_Sel,oAdd_Sel, wiLSB;
 reg [31:0] dataA=32'd10;
-reg [31:0] dataB=32'd16;
+reg [31:0] dataB=32'd349525;
 wire [63:0] product;
 
 control_Machine control1(.Clock(Clock),.Reset(Reset),.iLSB(wiLSB),.iValid_Data(wValidData),.iAck(wAck),.oShift(oShift),.oA_Sel(oA_Sel),.oB_Sel(oB_Sel),.oProduct_Sel(oProduct_Sel),.oAdd_Sel(oAdd_Sel));
