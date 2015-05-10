@@ -125,8 +125,8 @@ endmodule
 module MUX #(parameter SIZE=32)
 (
 	input wire Select,
-	input wire [SIZE-1:0]Data_A,
 	input wire [SIZE-1:0]Data_B,
+	input wire [SIZE-1:0]Data_A,
 	output reg [SIZE-1:0] Out
 );
 
