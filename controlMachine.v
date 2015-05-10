@@ -27,8 +27,8 @@ module control_Machine
   //Registros  internos del controlador
   
   reg [5:0] rCounter;
-  reg [7:0]rCurrentState;
-  reg  [7:0]rNextState;
+  reg [1:0]rCurrentState;
+  reg  [1:0]rNextState;
   reg rCountReset;
 
   //Next State and delay logic

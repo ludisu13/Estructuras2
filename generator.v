@@ -30,7 +30,7 @@ initial
 	begin
 	 rst=0;
 	#2 rst=~rst;
-	#600 rst=~rst;
+	#500 rst=~rst;
 	end
 endmodule
 
@@ -41,8 +41,8 @@ initial
 	begin
 	
 	 acknowledge=0;
-	#20000 acknowledge=~acknowledge;
-	#400 acknowledge=~acknowledge;
+	#25000 acknowledge=~acknowledge;
+	#500 acknowledge=~acknowledge;
 	end
 endmodule
 
@@ -53,7 +53,7 @@ initial
 	begin
 	
 	validdata=0;
-	#1000 validdata=~validdata;
+	#2500 validdata=~validdata;
 	#500 validdata=~validdata;
 	end
 endmodule

@@ -1,117 +1,3 @@
-module DataPath
-(
-	input wire b_sel,
-	input wire a_sel,
-	input wire prod_sel,
-	input wire [31:0]Data_A,
-	input wire [31:0]Data_B,
-	input wire Shift_Enable,
-	input wire Clock,
-	input wire Reset,
-	output reg Prod,
-	output wire oB_LSB;
-);
-
-//-------------PARA B-----------------//
-wire [31:0]Mux_B_Out;
-wire [31:0]Reg_B_Out;
-wire [31:0]Shifted_B;
-assign oB_LSB= Reg_B_Out[0];
-
-MUX #(32) Mux_B
-(
-	.Select(b_sel),
-	.Data_A(Shifted_B),
-	.Data_B(Data_B),
-	.Out(Mux_B_Out)
-);
-
-FFD #(32) Reg_B
-(
-	.Clock(Clock),
-	.Reset(Reset),
-	.Enable(1),
-	.D(Mux_B_Out),
-	.Q(Reg_B_Out)
-	
-);
-
-Shift_Register_Right Shift_B
-(	
-	.Data(Reg_B_Out),
-	.Enable(Shift_Enable),
-	.Shifted_Data(Shifted_B)
-);
-
-//--------PARA A----------//
-wire [31:0]Mux_A_Out;
-wire [31:0]Reg_A_Out;
-wire [31:0]Shifted_A;
-
-MUX #(32) Mux_A
-(
-	.Select(a_sel),
-	.Data_A(Shifted_A),
-	.Data_B(Data_A),
-	.Out(Mux_A_Out)
-);
-
-FFD #(32) Reg_A
-(
-	.Clock(Clock),
-	.Reset(Reset),
-	.Enable(1),
-	.D(Mux_A_Out),
-	.Q(Reg_A_Out)
-	
-);
-
-Shift_Register_Left Shift_A
-(	
-	.Data(Reg_A_Out),
-	.Enable(Shift_Enable),
-	.Shifted_Data(Shifted_A)
-);
-
-//--------PARA EL PRODUCTO------------//
-wire [63:0]Mux_Prod_Out;
-wire [63:0]Add_Out;
-wire [63:0]Sum_Prod;
-
-MUX #(64) Mux_Prod
-(
-	.Select(prod_sel),
-	.Data_A(Sum_Prod),
-	.Data_B(64'b0),
-	.Out(Mux_Prod_Out)
-);
-
-FFD #(64) Reg_Prod
-(
-	.Clock(Clock),
-	.Reset(Reset),
-	.Enable(1),
-	.D(Mux_Prod_Out),
-	.Q(Prod)
-);
-
-ADDER Adder_Prod
-(
-	.Data_A(Prod),
-	.Data_B(Reg_A_Out),
-	.Result(Add_Out)
-);
-
-MUX #(64) Mux_Prod
-(
-	.Select(Data_B[0]),
-	.Data_A(Add_Out),
-	.Data_B(Prod),
-	.Out(Sum_Prod)
-);
-endmodule
-
-
 ///////////////////MUX//////////////////
 module MUX #(parameter SIZE=32)
 (
@@ -198,3 +84,120 @@ module ADDER
 			Result = Data_B + Data_A;
 		end
 endmodule
+
+
+//---------------DATAPATH-------------------//
+module DataPath
+(
+	input wire b_sel,
+	input wire a_sel,
+	input wire prod_sel,
+	input wire [31:0]Data_A,
+	input wire [31:0]Data_B,
+	input wire Shift_Enable,
+	input wire Clock,
+	input wire Reset,
+	output reg Prod,
+	output wire oB_LSB
+);
+
+//-------------PARA B-----------------//
+wire [31:0]Mux_B_Out;
+wire [31:0]Reg_B_Out;
+wire [31:0]Shifted_B;
+assign oB_LSB= Reg_B_Out[0];
+
+MUX #(32) Mux_B
+(
+	.Select(b_sel),
+	.Data_A(Shifted_B),
+	.Data_B(Data_B),
+	.Out(Mux_B_Out)
+);
+
+FFD #(32) Reg_B
+(
+	.Clock(Clock),
+	.Reset(Reset),
+	.Enable(1),
+	.D(Mux_B_Out),
+	.Q(Reg_B_Out)
+	
+);
+
+Shift_Register_Right Shift_B
+(	
+	.Data(Reg_B_Out),
+	.Enable(Shift_Enable),
+	.Shifted_Data(Shifted_B)
+);
+
+//--------PARA A----------//
+wire [31:0]Mux_A_Out;
+wire [31:0]Reg_A_Out;
+wire [31:0]Shifted_A;
+
+MUX #(32) Mux_A
+(
+	.Select(a_sel),
+	.Data_A(Shifted_A),
+	.Data_B(Data_A),
+	.Out(Mux_A_Out)
+);
+
+FFD #(32) Reg_A
+(
+	.Clock(Clock),
+	.Reset(Reset),
+	.Enable(1),
+	.D(Mux_A_Out),
+	.Q(Reg_A_Out)
+	
+);
+
+Shift_Register_Left Shift_A
+(	
+	.Data(Reg_A_Out),
+	.Enable(Shift_Enable),
+	.Shifted_Data(Shifted_A)
+);
+
+//--------PARA EL PRODUCTO------------//
+wire [63:0]Mux_Prod_Out;
+wire [63:0]Add_Out;
+wire [63:0]Sum_Prod;
+
+MUX #(64) Mux_Prod1
+(
+	.Select(prod_sel),
+	.Data_A(Sum_Prod),
+	.Data_B(64'b0),
+	.Out(Mux_Prod_Out)
+);
+
+FFD #(64) Reg_Prod
+(
+	.Clock(Clock),
+	.Reset(Reset),
+	.Enable(1),
+	.D(Mux_Prod_Out),
+	.Q(Prod)
+);
+
+ADDER Adder_Prod
+(
+	.Data_A(Prod),
+	.Data_B(Reg_A_Out),
+	.Result(Add_Out)
+);
+
+MUX #(64) Mux_Prod0
+(
+	.Select(Data_B[0]),
+	.Data_A(Add_Out),
+	.Data_B(Prod),
+	.Out(Sum_Prod)
+);
+endmodule
+
+
