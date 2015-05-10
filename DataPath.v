@@ -115,7 +115,7 @@ MUX #(64) Mux_Prod0
 (
 	.Select(add_sel),
 	.Data_A(Add_Out),
-	.Data_B(Prod),
+	.Data_B(Product),
 	.Out(Sum_Prod)
 );
 endmodule
