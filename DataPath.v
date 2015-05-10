@@ -8,7 +8,7 @@ module DataPath
 	input wire Shift_Enable,
 	input wire Clock,
 	input wire Reset,
-	output reg Prod,
+	output reg [63:0]Prod,
 	output wire oB_LSB
 );
 
@@ -97,8 +97,8 @@ FFD #(64) Reg_Prod
 
 ADDER Adder_Prod
 (
-	.Data_A(Prod),
-	.Data_B(Reg_A_Out),
+	.Data_A(Reg_A_Out), //Reg_A_Out
+	.Data_B(Prod),
 	.Result(Add_Out)
 );
 
@@ -121,7 +121,7 @@ module MUX #(parameter SIZE=32)
 	output reg [SIZE-1:0] Out
 );
 
-always 
+always @(*)
 	begin
 		if(Select==0)
 			Out=Data_A;
@@ -176,7 +176,7 @@ module Shift_Register_Left
 (
 	input wire [31:0]Data,
 	input wire Enable,
-	output wire [31:0]Shifted_Dat
+	output reg [31:0]Shifted_Data
 );
 	
 	always @ (Enable )
@@ -191,9 +191,9 @@ module ADDER
 (
 	input wire [31:0]Data_A,
 	input wire [63:0]Data_B,
-	output wire [63:0]Result
+	output reg [63:0]Result
 );
-	always
+	always @(*)
 		begin
 			Result = Data_B + Data_A;
 		end
