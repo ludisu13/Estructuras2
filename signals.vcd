@@ -1,5 +1,5 @@
 $date
-	Sun May 10 12:55:19 2015
+	Sun May 10 23:51:02 2015
 $end
 $version
 	Icarus Verilog
@@ -216,15 +216,26 @@ $end
 18
 1"
 #250000
-0I
-0+
+bx0 T
+bx0 >
+bx0 U
+b0xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx L
+b0xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx ?
+b0xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx M
 b0 b
 b0 ;
 b0 c
+0I
+0+
 b0 H
 b0 (
 b0 a
-b0 d
+bx0 Y
+bx0 D
+bx0 R
+b0xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx Q
+b0xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx E
+b0xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx J
 b0 O
 b0 C
 b0 P
@@ -234,18 +245,7 @@ b0 X
 b0 `
 b0 _
 b0 A
-b0xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx L
-b0xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx ?
-b0xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx M
-bx0 T
-bx0 >
-bx0 U
-bx0 Y
-bx0 D
-bx0 R
-b0xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx Q
-b0xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx E
-b0xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx J
+b0 d
 0/
 0$
 01
@@ -267,17 +267,17 @@ b0 5
 08
 0"
 #750000
+bx b
+bx ;
+bx c
 xI
 x+
 bx H
 bx (
 bx a
-bx d
-bx b
-bx ;
-bx c
 bx _
 bx A
+bx d
 bx0 W
 bx0 B
 bx0 X
@@ -349,15 +349,14 @@ b1 5
 0:
 0*
 #3250000
-1I
-1+
 b1010 b
 b1010 ;
 b1010 c
+1I
+1+
 b0 H
 b0 (
 b0 a
-b0 d
 b10 4
 b1010101010101010101 O
 b1010101010101010101 C
@@ -368,6 +367,7 @@ b1010 X
 b1010 `
 b0 _
 b0 A
+b0 d
 17
 1!
 #3500000
@@ -703,17 +703,17 @@ b0 5
 09
 0)
 #25750000
+bx b
+bx ;
+bx c
 0I
 0+
 bx H
 bx (
 bx a
-bx d
-bx b
-bx ;
-bx c
 bx _
 bx A
+bx d
 b10100 W
 b10100 B
 b10100 X
