@@ -13,7 +13,7 @@ control_Machine control1(.Clock(Clock),.Reset(Reset),.iLSB(wiLSB),.iValid_Data(w
 probador p1(.clk(Clock),.rst(Reset),.acknowledge(wAck),.validdata(wValidData));
 
 DataPath data1(
-	.b_sel(oB_Sel), .a_sel(oA_Sel), .prod_sel(oProduct_Sel), .Data_A(dataA), .Data_B(dataB), .Shift_Enable(oShift), .Clock(Clock), .Reset(Reset), .Prod(product), .oB_LSB(wiLSB));
+	.b_sel(oB_Sel), .a_sel(oA_Sel), .add_sel(oAdd_Sel),.prod_sel(oProduct_Sel), .iData_A(dataA), .iData_B(dataB), .Shift_Enable(oShift), .Clock(Clock), .Reset(Reset), .Prod(product), .oB_LSB(wiLSB));
 
 
 

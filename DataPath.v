@@ -4,8 +4,8 @@ module DataPath
 	input wire a_sel,
 	input wire add_sel,
 	input wire prod_sel,
-	input wire [31:0]Data_A,
-	input wire [31:0]Data_B,
+	input wire [31:0]iData_A,
+	input wire [31:0]iData_B,
 	input wire Shift_Enable,
 	input wire Clock,
 	input wire Reset,
@@ -26,7 +26,7 @@ MUX #(32) Mux_B
 (
 	.Select(b_sel),
 	.Data_A(Shifted_B),
-	.Data_B(Data_B),
+	.Data_B(iData_B),
 	.Out(Mux_B_Out)
 );
 
@@ -56,7 +56,7 @@ MUX #(32) Mux_A
 (
 	.Select(a_sel),
 	.Data_A(Shifted_A),
-	.Data_B(Data_A),
+	.Data_B(iData_A),
 	.Out(Mux_A_Out)
 );
 
@@ -114,8 +114,8 @@ ADDER Adder_Prod
 MUX #(64) Mux_Prod0
 (
 	.Select(add_sel),
-	.Data_A(Add_Out),
-	.Data_B(Product),
+	.Data_A(Product),//Add_Out
+	.Data_B(Add_Out),//Product
 	.Out(Sum_Prod)
 );
 endmodule
@@ -174,7 +174,7 @@ module Shift_Register_Right
 	output reg [31:0]Shifted_Data
 );
 	
-	always @ (Enable)
+	always @ (Data)
 		begin
 			Shifted_Data = Data>>1;
 		end
