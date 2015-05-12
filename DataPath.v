@@ -41,7 +41,7 @@ FFD #(32) Reg_B
 );
 
 Shift_Register_Right Shift_B
-(	
+(	.Clock(Clock),
 	.Data(Reg_B_Out),
 	.Enable(Shift_Enable),
 	.Shifted_Data(Shifted_B)
@@ -71,7 +71,7 @@ FFD #(32) Reg_A
 );
 
 Shift_Register_Left Shift_A
-(	
+(	.Clock(Clock),
 	.Data(Reg_A_Out),
 	.Enable(Shift_Enable),
 	.Shifted_Data(Shifted_A)
@@ -168,30 +168,39 @@ endmodule
 
 ////////////////SHIFT REGISTER RIGHT//////////
 module Shift_Register_Right
-(
+(	input wire Clock,
 	input wire [31:0]Data,
 	input wire Enable,
 	output reg [31:0]Shifted_Data
 );
 	
-	always @ (Enable)
+	always @ (posedge Clock)
+	if(Enable)
 		begin
 			Shifted_Data <= Data>>1;
 		end
-
+	else
+		begin
+			Shifted_Data <= Data;
+		end
 endmodule
 
 ////////////SHIFT REGISTER LEFT//////////////
 module Shift_Register_Left
-(
+(	input wire Clock,
 	input wire [31:0]Data,
 	input wire Enable,
 	output reg [31:0]Shifted_Data
 );
 	
-	always @ (Enable )
+	always @ (posedge Clock)
+	if(Enable)
 		begin
 			Shifted_Data <= Data<<1;
+		end
+	else
+		begin
+			Shifted_Data <= Data;
 		end
 
 endmodule
