@@ -48,19 +48,21 @@ FFD #(32) Reg_B
 );*/
 
 //--------PARA A----------//
-wire [31:0]Mux_A_Out;
-wire [31:0]Reg_A_Out;
-wire [31:0]Shifted_A;
-assign  Shifted_A = Reg_A_Out <<1;
-MUX #(32) Mux_A
+wire [63:0]Mux_A_Out;
+wire [63:0]Reg_A_Out;
+wire [63:0]Shifted_A;
+wire [63:0]A_64_Bits;
+assign  Shifted_A = {32'b0,Reg_A_Out} <<1;
+assign  A_64_Bits = {32'b0,Data_A} ;
+MUX #(64) Mux_A
 (
 	.Select(a_sel),
 	.Data_A(Shifted_A),
-	.Data_B(Data_A),
+	.Data_B(A_64_Bits),
 	.Out(Mux_A_Out)
 );
 
-FFD #(32) Reg_A
+FFD #(64) Reg_A
 (
 	.Clock(Clock),
 	.Reset(Reset),
@@ -230,7 +232,7 @@ endmodule
 ////////////ADDER///////////////////////////
 module ADDER
 (
-	input wire [31:0]Data_A,
+	input wire [63:0]Data_A,
 	input wire [63:0]Data_B,
 	output reg [63:0]Result
 );
