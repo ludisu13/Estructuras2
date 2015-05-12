@@ -10,7 +10,7 @@ module DataPath
 	input wire Clock,
 	input wire Reset,
 	output reg [63:0]Prod,
-	output reg oB_LSB
+	output wire oB_LSB
 
 );
 
@@ -19,8 +19,8 @@ wire [31:0]Mux_B_Out;
 wire [31:0]Reg_B_Out;
 wire [31:0]Shifted_B;
 
-always @(Reg_B_Out[0])
-	oB_LSB= Reg_B_Out[0];
+
+assign	oB_LSB= Mux_B_Out[0];
 
 MUX #(32) Mux_B
 (
@@ -107,7 +107,7 @@ ADDER Adder_Prod
 (
 
 	.Data_A(Reg_A_Out),
-	.Data_B(Prod),
+	.Data_B(Product),
 	.Result(Add_Out)
 );
 
@@ -133,9 +133,9 @@ module MUX #(parameter SIZE=32)
 
 always @(*)
 	begin
-		if(Select==0)
+		if(Select==1)
 			Out<=Data_A;
-		else if (Select==1)
+		else if (Select==0)
 			Out<=Data_B;
 	end
 
@@ -173,15 +173,26 @@ module Shift_Register_Right
 	input wire Enable,
 	output reg [31:0]Shifted_Data
 );
-	
-	always @ (posedge Clock)
+	reg newClock;
+initial
+  begin 
+ 
+  newClock =0;
+  end
+  always
+	begin
+   # 125 newClock  =1;
+   # 125 newClock  =0;
+   
+	end
+	always @(  posedge  newClock)
 	if(Enable)
 		begin
-			Shifted_Data <= Data>>1;
+			Shifted_Data = Data>>1;
 		end
 	else
 		begin
-			Shifted_Data <= Data;
+			Shifted_Data = Data;
 		end
 endmodule
 
@@ -192,18 +203,29 @@ module Shift_Register_Left
 	input wire Enable,
 	output reg [31:0]Shifted_Data
 );
-	
-	always @ (posedge Clock)
+reg newClock;
+initial
+  begin 
+ 
+  newClock =0;
+  end
+  always
+	begin
+   # 125 newClock  =1;
+   # 125 newClock  =0;
+   
+	end
+always @(posedge newClock)
 	if(Enable)
 		begin
-			Shifted_Data <= Data<<1;
+			Shifted_Data = Data<<1;
 		end
 	else
 		begin
-			Shifted_Data <= Data;
+			Shifted_Data = Data;
 		end
-
 endmodule
+
 
 ////////////ADDER///////////////////////////
 module ADDER

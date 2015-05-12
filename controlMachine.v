@@ -30,6 +30,7 @@ module control_Machine
   reg [1:0]rCurrentState;
   reg  [1:0]rNextState;
   reg rCountReset;
+  reg firstBit;
 
   //Next State and delay logic
   always @ ( posedge Clock )
@@ -37,6 +38,8 @@ module control_Machine
       begin
         rCurrentState = `STATE_IDLE;
         rCountReset <=1'b1;
+        firstBit <=1'b0;
+        
        
       end
   else
@@ -73,6 +76,7 @@ module control_Machine
 			begin
             rNextState = `STATE_CALC;
             rCountReset=1'b0;
+           firstBit=1'b1;
             end
           else
 			begin
@@ -85,18 +89,30 @@ module control_Machine
 */
       `STATE_CALC:
         begin
-         oA_Sel=1;
-         oB_Sel=1;
-            oProduct_Sel=1;
+       /* if(firstBit)
+        begin
+        oA_Sel=1'b0;
+         oB_Sel=1'b0;
+            oProduct_Sel=1'b0;
+            firstBit=1'b0;
+        end
+        else
+        begin*/
+         oA_Sel=1'b1;
+         oB_Sel=1'b1;
+            oProduct_Sel=1'b1;
+           // end
          if(iLSB)
          begin
-           oShift=1;
+           oShift=1'b1;
+           oAdd_Sel=1'b0;
            end
            else
            begin
-           oShift=1;
-           oAdd_Sel=1;
+           oShift=1'b1;
+           oAdd_Sel=1'b1;
            end
+           
        if(rCounter<6'd32)
        begin
        rNextState=`STATE_CALC;

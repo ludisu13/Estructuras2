@@ -21,7 +21,7 @@ DataPath data1(
   begin
     $dumpfile("signals.vcd");
     $dumpvars;
-    #35000 ;
+    #70000 ;
     $display ("Test finished");
     $finish;
    
