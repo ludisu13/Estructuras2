@@ -134,9 +134,9 @@ module MUX #(parameter SIZE=32)
 always @(*)
 	begin
 		if(Select==0)
-			Out=Data_A;
+			Out<=Data_A;
 		else if (Select==1)
-			Out=Data_B;
+			Out<=Data_B;
 	end
 
 endmodule
@@ -176,7 +176,7 @@ module Shift_Register_Right
 	
 	always @ (Data)
 		begin
-			Shifted_Data = Data>>1;
+			Shifted_Data <= Data>>1;
 		end
 
 endmodule
@@ -191,7 +191,7 @@ module Shift_Register_Left
 	
 	always @ (Enable )
 		begin
-			Shifted_Data = Data<<1;
+			Shifted_Data <= Data<<1;
 		end
 
 endmodule
@@ -206,6 +206,6 @@ module ADDER
 
 	always @(*)
 		begin
-			Result = Data_B + Data_A;
+			Result <= Data_B + Data_A;
 		end
 endmodule

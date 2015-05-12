@@ -1,5 +1,9 @@
 $date
+<<<<<<< HEAD
 	Sun May 10 16:21:37 2015
+=======
+	Sun May 10 23:51:02 2015
+>>>>>>> origin/master
 $end
 $version
 	Icarus Verilog
@@ -215,6 +219,7 @@ $end
 18
 1"
 #250000
+<<<<<<< HEAD
 0H
 0+
 b0 K
@@ -237,11 +242,34 @@ b0 (
 b0 `
 b0 N
 b0 A
+=======
+bx0 T
+bx0 >
+bx0 U
+b0xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx L
+b0xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx ?
+b0xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx M
+b0 b
+b0 ;
+b0 c
+0I
+0+
+b0 H
+b0 (
+b0 a
+bx0 Y
+bx0 D
+bx0 R
+b0xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx Q
+b0xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx E
+b0xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx J
+>>>>>>> origin/master
 b0 O
 b0 V
 b0 @
 b0 W
 b0 _
+<<<<<<< HEAD
 b0 ^
 b0 ?
 b0 b
@@ -251,6 +279,10 @@ bx0 T
 bx0 X
 bx0 B
 bx0 Q
+=======
+b0 A
+b0 d
+>>>>>>> origin/master
 0/
 0$
 01
@@ -272,11 +304,25 @@ b0 5
 08
 0"
 #750000
+<<<<<<< HEAD
 bx a
 bx ;
 bx c
 bx0 V
 bx0 @
+=======
+bx b
+bx ;
+bx c
+xI
+x+
+bx H
+bx (
+bx a
+bx _
+bx A
+bx d
+>>>>>>> origin/master
 bx0 W
 bx0 _
 b0 4
@@ -340,6 +386,7 @@ b1 5
 0:
 0*
 #3250000
+<<<<<<< HEAD
 1H
 1+
 b1010 d
@@ -351,6 +398,16 @@ b101010101010101010 I
 b1010 a
 b1010 ;
 b1010 c
+=======
+b1010 b
+b1010 ;
+b1010 c
+1I
+1+
+b0 H
+b0 (
+b0 a
+>>>>>>> origin/master
 b10 4
 b1010101010101010101 N
 b1010101010101010101 A
@@ -358,7 +415,16 @@ b1010101010101010101 O
 b1010 V
 b1010 @
 b1010 W
+<<<<<<< HEAD
 b1010 _
+=======
+b1010 B
+b1010 X
+b1010 `
+b0 _
+b0 A
+b0 d
+>>>>>>> origin/master
 17
 1!
 #3500000
@@ -691,6 +757,7 @@ b0 5
 09
 0)
 #25750000
+<<<<<<< HEAD
 0H
 0+
 b10101010101010101 K
@@ -704,6 +771,19 @@ b10101010101010101 C
 b10101010101010101 I
 b10100 V
 b10100 @
+=======
+bx b
+bx ;
+bx c
+0I
+0+
+bx H
+bx (
+bx a
+bx _
+bx A
+bx d
+>>>>>>> origin/master
 b10100 W
 b10100 _
 b101010101010101010 N
