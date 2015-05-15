@@ -8,7 +8,9 @@ DataPath.v controlMachine.v generator.v  que están incluidos en testbench.v
 Además se generara el archivo de pruebas testbench.vvp y luego se generará el archivo
 de señales signals.vcd 
 Por último se ejecutara el visor de ondas GTKwave en donde se podrán ver todas las señales 
-involucradas en la máquina de estados del controlador y el datapath.
+involucradas en la máquina de estados del controlador y el datapath. Si se quieren ver las
+senales del controlador se abre en el GTKwave el archivo signals.sav y si se quieren ver las
+pruebas de resultados se abre en el GTKwave el archivo prueba.sav
 
 **************************
 Creado por:
