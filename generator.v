@@ -43,6 +43,8 @@ initial
 	 acknowledge=0;
 	#25000 acknowledge=~acknowledge;
 	#500 acknowledge=~acknowledge;
+	#27500 acknowledge=~acknowledge;
+	#500 acknowledge=~acknowledge;
 	end
 endmodule
 
@@ -54,6 +56,10 @@ initial
 	
 	validdata=0;
 	#2500 validdata=~validdata;
+	#500 validdata=~validdata;
+	#26000 validdata=~validdata;
+	#500 validdata=~validdata;
+	#32000 validdata=~validdata;
 	#500 validdata=~validdata;
 	end
 endmodule
