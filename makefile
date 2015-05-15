@@ -3,9 +3,9 @@
 All:
 	iverilog -o testbench testbench.v
 	vvp testbench
-	gtkwave prueba.sav
+	gtkwave prueba.sav 
 	
 signals: 
 	iverilog -o testbench testbench.v
 	vvp testbench
-	gtkwave signals.sav
+	gtkwave signals.sav 
