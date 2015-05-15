@@ -21,6 +21,10 @@ DataPath data1(.add_sel(oAdd_Sel),
   begin
     $dumpfile("signals.vcd");
     $dumpvars;
+	#27000;
+	dataA=32'd0; dataB=32'd4294967295;
+	#27000;
+	dataA=32'd10000; dataB=32'd4500;
     #70000 ;
     $display ("Test finished");
     $finish;
