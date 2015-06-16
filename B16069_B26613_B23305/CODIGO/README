@@ -4,7 +4,6 @@ iterativo de 32 bits de 2 entradas implementado en Verilog.
 Debe asegurarse de tener instalado Icarus Verilog y el visor de ondas GTKwave.
 
 Luego de esto debe hacer el comando make en una terminal, lo cual compilará los archivos
-
 DataPath.v controlMachine.v generator.v  que están incluidos en testbench.v
 Además se generara el archivo de pruebas testbench.vvp y luego se generará el archivo
 de señales signals.vcd 
@@ -13,7 +12,6 @@ involucradas en la máquina de estados del controlador y el datapath. Si se quie
 senales del controlador se abre en el GTKwave el archivo signals.sav y si se quieren ver las
 pruebas de resultados se abre en el GTKwave el archivo prueba.sav. Esto se puede hacer con el 
 comando make que abrirá el prueba.sav o con make signals que abrirá el signals.sav
-
 
 **************************
 Creado por:

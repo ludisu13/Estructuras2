@@ -1,0 +1,44 @@
+[*]
+[*] GTKWave Analyzer v3.3.48 (w)1999-2013 BSI
+[*] Sun May 10 05:39:11 2015
+[*]
+[dumpfile] "C:\Users\MONGE\Documents\GitHub\Estructuras2\signals.vcd"
+[dumpfile_mtime] "Sun May 10 05:27:26 2015"
+[dumpfile_size] 4092
+[savefile] "C:\Users\MONGE\Documents\GitHub\Estructuras2\signals.sav"
+[timestart] 0
+[size] 1366 706
+[pos] -1 -1
+*-22.534048 29000000 502000 2500000 2750000 18250000 18750000 25000000 25250000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] BancoPruebas.
+[sst_width] 197
+[signals_width] 174
+[sst_expanded] 1
+[sst_vpaned_height] 191
+@28
+BancoPruebas.Clock
+BancoPruebas.Reset
+BancoPruebas.oA_Sel
+BancoPruebas.oAdd_Sel
+BancoPruebas.oB_Sel
+BancoPruebas.oProduct_Sel
+BancoPruebas.oShift
+BancoPruebas.control1.iValid_Data
+BancoPruebas.control1.iAck
+BancoPruebas.control1.iLSB
+@c00024
+BancoPruebas.control1.rCounter[5:0]
+@28
+(0)BancoPruebas.control1.rCounter[5:0]
+(1)BancoPruebas.control1.rCounter[5:0]
+(2)BancoPruebas.control1.rCounter[5:0]
+(3)BancoPruebas.control1.rCounter[5:0]
+(4)BancoPruebas.control1.rCounter[5:0]
+(5)BancoPruebas.control1.rCounter[5:0]
+@1401200
+-group_end
+@24
+BancoPruebas.control1.rNextState[1:0]
+BancoPruebas.control1.rCurrentState[1:0]
+[pattern_trace] 1
+[pattern_trace] 0
