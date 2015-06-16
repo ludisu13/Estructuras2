@@ -1,0 +1,18 @@
+*************************README*****************************
+Este archivo detalla la forma en la cual se debe compilar y ejecutar el multiplicador 
+iterativo de 32 bits de 2 entradas implementado en Verilog.
+Debe asegurarse de tener instalado Icarus Verilog y el visor de ondas GTKwave.
+
+Luego de esto debe hacer el comando make en una terminal, lo cual compilará los archivos
+DataPath.v controlMachine.v generator.v  y testbench.v
+Además se generara el archivo de pruebas testbench.vvp y luego se generará el archivo
+de señales signals.vcd 
+Por último se ejecutara el visor de ondas GTKwave en donde se podrán ver todas las señales 
+involucradas en la máquina de estados del controlador y el datapath.
+
+**************************
+Creado por:
+**************************
+Arquitecto: Luis Diego Soto Ugalde. B26613
+Diseñador: Erick Josué Eduarte Rojas. B22305
+Verificador: Juan Diego Sánchez Brenes. B16068 
