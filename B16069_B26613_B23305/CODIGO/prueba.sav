@@ -1,0 +1,39 @@
+[*]
+[*] GTKWave Analyzer v3.3.48 (w)1999-2013 BSI
+[*] Fri May 15 01:59:10 2015
+[*]
+[dumpfile] "C:\Users\MONGE\Documents\GitHub\Estructuras2\signals.vcd"
+[dumpfile_mtime] "Thu May 14 23:01:19 2015"
+[dumpfile_size] 123786
+[savefile] "C:\Users\MONGE\Documents\GitHub\Estructuras2\prueba.sav"
+[timestart] 0
+[size] 1366 706
+[pos] -1 -1
+*-24.256706 90000000 2500000 18750000 25000000 29000000 45250000 53000000 61500000 77750000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] BancoPruebas.
+[sst_width] 197
+[signals_width] 219
+[sst_expanded] 1
+[sst_vpaned_height] 190
+@28
+BancoPruebas.Clock
+BancoPruebas.Reset
+@24
+BancoPruebas.dataA[31:0]
+BancoPruebas.dataB[31:0]
+@28
+BancoPruebas.oA_Sel
+BancoPruebas.oAdd_Sel
+BancoPruebas.oB_Sel
+BancoPruebas.oProduct_Sel
+BancoPruebas.oShift
+@24
+BancoPruebas.control1.rCurrentState[1:0]
+BancoPruebas.control1.rCounter[5:0]
+BancoPruebas.product[63:0]
+@28
+BancoPruebas.wAck
+BancoPruebas.wValidData
+BancoPruebas.wiLSB
+[pattern_trace] 1
+[pattern_trace] 0
