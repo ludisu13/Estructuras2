@@ -183,4 +183,7 @@ begin
 		rBranchTaken<=0;
 		
 	end
+	
+	endcase
+	end
 endmodule
