@@ -1,20 +1,19 @@
-`include "Definitions.v"
+`include "definitions.v"
 
 
 module ALU(
-
-	input 	wire[15:0] 	wInstruction;
-	input wire[7:0] iA;
-	input wire [7:0] iB;
-	output wire oRamEnableWrite;
-	output wire [7:0] oData;
-	output wire oWriteA;
-	output wire oWriteB;
-	output wire wCa, wCb;
+	input 	wire[15:0] 	wInstruction,
+	input wire[7:0] iA,
+	input wire [7:0] iB,
+	output reg oRamEnableWrite,
+	output wire[7:0] oData,
+	output reg oWriteA,
+	output reg oWriteB,
+	output reg wCa, wCb
 
 );
 reg [8:0]rEx;
-assign oData=[7:0]rEx;
+assign oData=rEx;
 always @ ( * )
 	begin
 		case(wInstruction)
@@ -164,7 +163,7 @@ always @ ( * )
 				end
 			`ASLA:
 				begin
-				rEx<=iA<<1;;
+				rEx<=iA<<1;
 				wCa<=rEx[8];
 				oRamEnableWrite<=1'b1;
 				oWriteA<=1'b1;
@@ -173,7 +172,7 @@ always @ ( * )
 				end
 			`ASRA:
 				begin
-				rEx<=iA>>1;;
+				rEx<=iA>>1;
 				wCa<=rEx[8];
 				oRamEnableWrite<=1'b1;
 				oWriteA<=1'b1;

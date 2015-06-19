@@ -1,7 +1,7 @@
 `timescale 1ns / 1ps
 `ifndef DEFINTIONS_V
 `define DEFINTIOSNS_V
-`default_nettype nhne	
+`default_nettype none	
 `define LDA 6'h00
 `define LDB 6'h01 
 `define LDCA 6'h02 
