@@ -17,6 +17,87 @@ always @(*)
 begin
 	case(wInstruction[15:0])
 	
+	`LDCA:
+	begin
+		rBranch_Taken<=0;
+		rMux_a_sel<=1;
+		rMux_b_sel<=0;
+		rC=wInstruction[7:0];
+	end
+	
+	`LDCB:
+	begin
+		rBranch_Taken<=0;
+		rMux_a_sel<=0;
+		rMux_b_sel<=1;
+		rC=wInstruction[7:0];
+	end
+	
+	`ADDCA:
+	begin
+		rBranch_Taken<=0;
+		rMux_a_sel<=0;
+		rMux_b_sel<=1;
+		rC=wInstruction[7:0];
+	end
+	
+	
+	`ADDCB:
+	begin
+		rBranch_Taken<=0;
+		rMux_a_sel<=1;
+		rMux_b_sel<=0;
+		rC=wInstruction[7:0];
+	end
+	
+	`SUBCA:
+	begin
+		rBranch_Taken<=0;
+		rMux_a_sel<=0;
+		rMux_b_sel<=1;
+		rC=wInstruction[7:0];
+	end
+	
+	`SUBCB:
+	begin
+		rBranch_Taken<=0;
+		rMux_a_sel<=1;
+		rMux_b_sel<=0;
+		rC=wInstruction[7:0];
+	end
+	
+	`ANDCA:
+	begin
+		rBranch_Taken<=0;
+		rMux_a_sel<=0;
+		rMux_b_sel<=1;
+		rC=wInstruction[7:0];
+	end
+	
+	`ANDCB:
+	begin
+		rBranch_Taken<=0;
+		rMux_a_sel<=1;
+		rMux_b_sel<=0;
+		rC=wInstruction[7:0];
+	end
+	
+	`ORCA:
+	begin
+		rBranch_Taken<=0;
+		rMux_a_sel<=0;
+		rMux_b_sel<=1;
+		rC=wInstruction[7:0];
+	end
+	
+	`ORCB:
+	begin
+		rBranch_Taken<=0;
+		rMux_a_sel<=1;
+		rMux_b_sel<=0;
+		rC=wInstruction[7:0];
+	end
+	
 	`BAEQ:
 	begin
 		rMux_a_sel<=0;
@@ -50,7 +131,7 @@ begin
 		if(wCa==1)
 		begin
 			rBranchTaken<=1;
-			rBranch_dir<=wInstruction[6:0]
+			rBranch_dir<=wInstruction[6:0];
 			
 			else
 			
