@@ -1,16 +1,14 @@
-module decodificador_senales(
-
-	input 	wire[15:0] 	wInstruction;
-	input wire 		wZa, wZb, wCa, wCb, wNa, wNb;
-	output wire 		rBranch_taken;
-	output wire[6:0] 	rBranch_dir;
-	//output wire[7:0] 	rA;
-	//output wire[7:0] 	rB;
-	output wire[7:0] 	rC;
-	output wire 		rMux_a_sel;
-	output wire 		rMux_b_sel;
-	
-
+`include "definitions.v"
+module decodificador(
+	input 	wire[15:0] 	wInstruction,
+	input 	wire 		wZa, wZb, wCa, wCb, wNa, wNb,
+	output reg 		rBranch_taken,
+	output reg[6:0] 	rBranch_dir,
+	//output reg[7:0] 	rA,
+	//output reg[7:0] 	rB,
+	output reg[7:0] 	rC,
+	output reg 		rMux_a_sel,
+	output reg 		rMux_b_sel
 );
 
 always @(*)
@@ -147,7 +145,7 @@ begin
 	begin
 		rMux_a_sel<=1;
 		rMux_b_sel<=0;
-		rBranch_Taken<=0;
+		rBranch_taken<=0;
 		rBranch_dir<=10'b0;
 		rC=wInstruction[7:0];
 	end
@@ -156,7 +154,7 @@ begin
 	begin
 		rMux_a_sel<=0;
 		rMux_b_sel<=1;
-		rBranch_Taken<=0;
+		rBranch_taken<=0;
 		rBranch_dir<=10'b0;
 		rC=wInstruction[7:0];
 	end
@@ -165,7 +163,7 @@ begin
 	begin	
 		rMux_a_sel<=0;
 		rMux_b_sel<=1;
-		rBranch_Taken<=0;
+		rBranch_taken<=0;
 		rBranch_dir<=10'b0;	
 		rC=wInstruction[7:0];
 	end
@@ -175,7 +173,7 @@ begin
 	begin
 		rMux_a_sel<=1;
 		rMux_b_sel<=0;
-		rBranch_Taken<=0;
+		rBranch_taken<=0;
 		rBranch_dir<=10'b0;
 		rC=wInstruction[7:0];
 	end
@@ -184,7 +182,7 @@ begin
 	begin
 		rMux_a_sel<=0;
 		rMux_b_sel<=1;
-		rBranch_Taken<=0;
+		rBranch_taken<=0;
 		rBranch_dir<=10'b0;
 		rC=wInstruction[7:0];
 	end
@@ -193,7 +191,7 @@ begin
 	begin
 		rMux_a_sel<=1;
 		rMux_b_sel<=0;
-		rBranch_Taken<=0;
+		rBranch_taken<=0;
 		rBranch_dir<=10'b0;
 		rC=wInstruction[7:0];
 	end
@@ -202,7 +200,7 @@ begin
 	begin
 		rMux_a_sel<=0;
 		rMux_b_sel<=1;
-		rBranch_Taken<=0;
+		rBranch_taken<=0;
 		rBranch_dir<=10'b0;
 		rC=wInstruction[7:0];
 	end
@@ -211,7 +209,7 @@ begin
 	begin	
 		rMux_a_sel<=1;
 		rMux_b_sel<=0;
-		rBranch_Taken<=0;
+		rBranch_taken<=0;
 		rBranch_dir<=10'b0;
 		rC=wInstruction[7:0];
 	end
@@ -220,7 +218,7 @@ begin
 	begin
 		rMux_a_sel<=0;
 		rMux_b_sel<=1;
-		rBranch_Taken<=0;
+		rBranch_taken<=0;
 		rBranch_dir<=10'b0;
 		rC=wInstruction[7:0];
 	end
@@ -229,7 +227,7 @@ begin
 	begin
 		rMux_a_sel<=1;
 		rMux_b_sel<=0;
-		rBranch_Taken<=0;
+		rBranch_taken<=0;
 		rBranch_dir<=10'b0;
 		rC=wInstruction[7:0];
 	end
@@ -238,7 +236,7 @@ begin
 	begin
 		rMux_a_sel<=0;
 		rMux_b_sel<=0;
-		rBranchTaken<=1;
+		rBranch_taken<=1;
 		rBranch_dir<=wInstruction[9:0];	
 		rC<=6'b0;		
 	end
@@ -250,11 +248,11 @@ begin
 		rC<=6'b0;
 		if(wZa==1)
 		begin
-			rBranchTaken<=1;
+			rBranch_taken<=1;
 			rBranch_dir<=wInstruction[6:0];			
 		end
 		else
-			rBranchTaken<=0;
+			rBranch_taken<=0;
 	end
 	
 	`BANE:
@@ -264,11 +262,11 @@ begin
 		rC<=6'b0;
 		if(wZa==0)
 		begin
-			rBranchTaken<=1;
+			rBranch_taken<=1;
 			rBranch_dir<=wInstruction[6:0];
 		end
 		else
-			rBranchTaken<=0;
+			rBranch_taken<=0;
 	end
 
 	`BACS:
@@ -278,14 +276,11 @@ begin
 		rC<=6'b0;
 		if(wCa==1)
 		begin
-			rBranchTaken<=1;
+			rBranch_taken<=1;
 			rBranch_dir<=wInstruction[6:0];
-			
-			else
-			
 		end
 		else
-			rBranchTaken<=0;
+			rBranch_taken<=0;
 	end
 	
 	`BACC:
@@ -295,11 +290,11 @@ begin
 		rC<=6'b0;
 		if(wCa==0)
 		begin
-			rBranchTaken<=1;
+			rBranch_taken<=1;
 			rBranch_dir<=wInstruction[6:0];
 		end
 		else
-			rBranchTaken<=0;
+			rBranch_taken<=0;
 	end
 	
 	`BAMI:
@@ -309,25 +304,25 @@ begin
 		rC<=6'b0;
 		if(wNa==1)
 		begin
-			rBranchTaken<=1;
+			rBranch_taken<=1;
 			rBranch_dir<=wInstruction[6:0];
 		end
 		else
-			rBranchTaken<=0;
+			rBranch_taken<=0;
 	end
 	
 	`BAPL:
+	begin
 		rMux_a_sel<=0;
 		rMux_b_sel<=0;	
 		rC<=6'b0;
-	begin
 		if(wNa==0)
 		begin
-			rBranchTaken<=1;
+			rBranch_taken<=1;
 			rBranch_dir<=wInstruction[6:0];
 		end
 		else
-			rBranchTaken<=0;
+			rBranch_taken<=0;
 	end
 	
 	`BBEQ:
@@ -337,11 +332,11 @@ begin
 		rC<=6'b0;
 		if(wZb==1)
 		begin
-			rBranchTaken<=1;
+			rBranch_taken<=1;
 			rBranch_dir<=wInstruction[6:0];
 		end
 		else
-			rBranchTaken<=0;
+			rBranch_taken<=0;
 	end
 	
 	`BBNE:
@@ -351,11 +346,11 @@ begin
 		rC<=6'b0;
 		if(wZb==0)
 		begin
-			rBranchTaken<=1;
+			rBranch_taken<=1;
 			rBranch_dir<=wInstruction[6:0];
 		end
 		else
-			rBranchTaken<=0;
+			rBranch_taken<=0;
 	end
 
 	`BBCS:
@@ -365,11 +360,11 @@ begin
 		rC<=6'b0;
 		if(wCb==1)
 		begin
-			rBranchTaken<=1;
+			rBranch_taken<=1;
 			rBranch_dir<=wInstruction[6:0];
 		end
 		else
-			rBranchTaken<=0;
+			rBranch_taken<=0;
 	end
 	
 	`BBCC:
@@ -379,11 +374,11 @@ begin
 		rC<=6'b0;
 		if(wCb==0)
 		begin
-			rBranchTaken<=1;
+			rBranch_taken<=1;
 			rBranch_dir<=wInstruction[6:0];
 		end
 		else
-			rBranchTaken<=0;
+			rBranch_taken<=0;
 	end
 	
 	`BBMI:
@@ -393,11 +388,11 @@ begin
 		rC<=6'b0;
 		if(wNb==1)
 		begin
-			rBranchTaken<=1;
+			rBranch_taken<=1;
 			rBranch_dir<=wInstruction[6:0];
 		end
 		else
-			rBranchTaken<=0;
+			rBranch_taken<=0;
 	end
 	
 	`BBPL:
@@ -407,18 +402,18 @@ begin
 		rC<=6'b0;
 		if(wNb==0)
 		begin
-			rBranchTaken<=1;
+			rBranch_taken<=1;
 			rBranch_dir<=wInstruction[6:0];
 		end
 		else
-			rBranchTaken<=0;
+			rBranch_taken<=0;
 	end
 	
 	default:
 	begin
 		rMux_a_sel<=0;
 		rMux_b_sel<=0;
-		rBranchTaken<=0;
+		rBranch_taken<=0;
 		rBranch_dir<=10'b0;
 		rC=8'b0;
 	end
