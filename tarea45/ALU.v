@@ -1,4 +1,5 @@
 `include "definitions.v"
+`include "FFD.v"
 
 
 module ALU(
@@ -14,6 +15,7 @@ module ALU(
 	output reg oReadA,oReadB
 	
 );
+
 reg [8:0]rEx;
 assign oData=rEx;
 always @ ( * )
@@ -311,4 +313,106 @@ always @ ( * )
 		end
 	
 		
+endmodule 
+
+module Banco_Registros(
+
+	input wire Clock,
+	input wire Reset,
+	input wire iRamEnableWrite,
+	input wire[7:0] iData,
+	input wire iWriteA,
+	input wire iWriteB,
+	input wire iCa, iCb,
+	input wire [9:0] iRamAddress,
+	input wire iReadA,iReadB
+	output reg oRamEnableWrite,
+	output wire[7:0] oData,
+	output reg oWriteA,
+	output reg oWriteB,
+	output reg wCa, wCb,
+	output reg [9:0] oRamAddress,
+	output reg oReadA,oReadB
+);
+
+FFD_POSEDGE_SYNCRONOUS_RESET # ( 1) FFD1 
+(
+	.Clock(Clock),
+	.Reset(Reset),
+	.Enable(1'b1),
+	.D(iRamEnableWrite),
+	.Q(oRamEnableWrite)
+);
+
+FFD_POSEDGE_SYNCRONOUS_RESET # ( 8 ) FFD2
+(
+	.Clock(Clock),
+	.Reset(Reset),
+	.Enable(1'b1),
+	.D(iData),
+	.Q(oData)
+);
+
+FFD_POSEDGE_SYNCRONOUS_RESET # ( 1 ) FFD3 
+(
+	.Clock(Clock),
+	.Reset(Reset),
+	.Enable(1'b1),
+	.D(iWriteA),
+	.Q(oWriteA)
+);
+
+FFD_POSEDGE_SYNCRONOUS_RESET # ( 1 ) FFD4
+(
+	.Clock(Clock),
+	.Reset(Reset),
+	.Enable(1'b1),
+	.D(iWriteB),
+	.Q(oWriteB)
+);
+
+FFD_POSEDGE_SYNCRONOUS_RESET # ( 1 ) FFD5 
+(
+	.Clock(Clock),
+	.Reset(Reset),
+	.Enable(1'b1),
+	.D(iCa),
+	.Q(oCa)
+);
+
+FFD_POSEDGE_SYNCRONOUS_RESET # ( 1 ) FFD6 
+(
+	.Clock(Clock),
+	.Reset(Reset),
+	.Enable(1'b1),
+	.D(iCb),
+	.Q(oCb)
+);
+
+FFD_POSEDGE_SYNCRONOUS_RESET # ( 10 ) FFD7
+(
+	.Clock(Clock),
+	.Reset(Reset),
+	.Enable(1'b1),
+	.D(iRamAddress),
+	.Q(oRamAddress)
+);
+
+FFD_POSEDGE_SYNCRONOUS_RESET # ( 1 ) FFD8
+(
+	.Clock(Clock),
+	.Reset(Reset),
+	.Enable(1'b1),
+	.D(iReadA),
+	.Q(oReadA)
+);
+
+FFD_POSEDGE_SYNCRONOUS_RESET # ( 1 ) FFD9
+(
+	.Clock(Clock),
+	.Reset(Reset),
+	.Enable(1'b1),
+	.D(iReadB),
+	.Q(oReadB)
+);
 endmodule 
