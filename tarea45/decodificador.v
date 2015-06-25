@@ -3,7 +3,8 @@ module decodificador(
 	input 	wire[15:0] 	wInstruction,
 	input 	wire 		wZa, wZb, wCa, wCb, wNa, wNb,
 	output reg 		rBranch_taken,
-	output reg[6:0] 	rBranch_dir,
+	output reg 		rJumpTaken;
+	output reg[9:0] 	rBranch_dir,
 	//output reg[7:0] 	rA,
 	//output reg[7:0] 	rB,
 	output reg[7:0] 	rC,
@@ -17,6 +18,7 @@ begin
 	
 	`LDA:
 	begin
+		rJumpTaken<=0;
 		rMux_a_sel<=0;
 		rMux_b_sel<=0;
 		rBranch_taken<=0;
@@ -26,6 +28,7 @@ begin
 	
 	`LDB:
 	begin
+		rJumpTaken<=0;
 		rMux_a_sel<=0;
 		rMux_b_sel<=0;
 		rBranch_taken<=0;
@@ -35,6 +38,7 @@ begin
 	
 	`STA:
 	begin
+		rJumpTaken<=0;
 		rMux_a_sel<=0;
 		rMux_b_sel<=0;
 		rBranch_taken<=0;
@@ -44,6 +48,7 @@ begin
 	
 	`STB:
 	begin
+		rJumpTaken<=0;
 		rMux_a_sel<=0;
 		rMux_b_sel<=0;
 		rBranch_taken<=0;
@@ -53,6 +58,7 @@ begin
 	
 	`ADDA:
 	begin
+		rJumpTaken<=0;
 		rMux_a_sel<=0;
 		rMux_b_sel<=0;
 		rBranch_taken<=0;
@@ -62,6 +68,7 @@ begin
 	
 	`ADDB:
 	begin
+		rJumpTaken<=0;
 		rMux_a_sel<=0;
 		rMux_b_sel<=0;
 		rBranch_taken<=0;
@@ -71,6 +78,7 @@ begin
 	
 	`SUBA:
 	begin
+		rJumpTaken<=0;
 		rMux_a_sel<=0;
 		rMux_b_sel<=0;
 		rBranch_taken<=0;
@@ -80,6 +88,7 @@ begin
 	
 	`SUBB:
 	begin
+		rJumpTaken<=0;
 		rMux_a_sel<=0;
 		rMux_b_sel<=0;
 		rBranch_taken<=0;
@@ -89,6 +98,7 @@ begin
 	
 	`ANDA:
 	begin
+		rJumpTaken<=0;
 		rMux_a_sel<=0;
 		rMux_b_sel<=0;
 		rBranch_taken<=0;
@@ -98,6 +108,7 @@ begin
 	
 	`ANDB:
 	begin
+		rJumpTaken<=0;
 		rMux_a_sel<=0;
 		rMux_b_sel<=0;
 		rBranch_taken<=0;
@@ -107,6 +118,7 @@ begin
 	
 	`ORA:
 	begin
+		rJumpTaken<=0;
 		rMux_a_sel<=0;
 		rMux_b_sel<=0;
 		rBranch_taken<=0;
@@ -116,6 +128,7 @@ begin
 	
 	`ORB:
 	begin
+		rJumpTaken<=0;
 		rMux_a_sel<=0;
 		rMux_b_sel<=0;
 		rBranch_taken<=0;
@@ -125,6 +138,7 @@ begin
 	
 	`ASLA:
 	begin
+		rJumpTaken<=0;
 		rMux_a_sel<=0;
 		rMux_b_sel<=0;
 		rBranch_taken<=0;
@@ -134,6 +148,7 @@ begin
 	
 	`ASRA:
 	begin
+		rJumpTaken<=0;
 		rMux_a_sel<=0;
 		rMux_b_sel<=0;
 		rBranch_taken<=0;
@@ -143,6 +158,7 @@ begin
 	
 	`LDCA:
 	begin
+		rJumpTaken<=0;
 		rMux_a_sel<=1;
 		rMux_b_sel<=0;
 		rBranch_taken<=0;
@@ -152,6 +168,7 @@ begin
 	
 	`LDCB:
 	begin
+		rJumpTaken<=0;
 		rMux_a_sel<=0;
 		rMux_b_sel<=1;
 		rBranch_taken<=0;
@@ -161,6 +178,7 @@ begin
 	
 	`ADDCA:
 	begin	
+		rJumpTaken<=0;
 		rMux_a_sel<=0;
 		rMux_b_sel<=1;
 		rBranch_taken<=0;
@@ -171,6 +189,7 @@ begin
 	
 	`ADDCB:
 	begin
+		rJumpTaken<=0;
 		rMux_a_sel<=1;
 		rMux_b_sel<=0;
 		rBranch_taken<=0;
@@ -180,6 +199,7 @@ begin
 	
 	`SUBCA:
 	begin
+		rJumpTaken<=0;
 		rMux_a_sel<=0;
 		rMux_b_sel<=1;
 		rBranch_taken<=0;
@@ -189,6 +209,7 @@ begin
 	
 	`SUBCB:
 	begin
+		rJumpTaken<=0;
 		rMux_a_sel<=1;
 		rMux_b_sel<=0;
 		rBranch_taken<=0;
@@ -198,6 +219,7 @@ begin
 	
 	`ANDCA:
 	begin
+		rJumpTaken<=0;
 		rMux_a_sel<=0;
 		rMux_b_sel<=1;
 		rBranch_taken<=0;
@@ -207,6 +229,7 @@ begin
 	
 	`ANDCB:
 	begin	
+		rJumpTaken<=0;
 		rMux_a_sel<=1;
 		rMux_b_sel<=0;
 		rBranch_taken<=0;
@@ -216,6 +239,7 @@ begin
 	
 	`ORCA:
 	begin
+		rJumpTaken<=0;
 		rMux_a_sel<=0;
 		rMux_b_sel<=1;
 		rBranch_taken<=0;
@@ -225,6 +249,7 @@ begin
 	
 	`ORCB:
 	begin
+		rJumpTaken<=0;
 		rMux_a_sel<=1;
 		rMux_b_sel<=0;
 		rBranch_taken<=0;
@@ -236,13 +261,15 @@ begin
 	begin
 		rMux_a_sel<=0;
 		rMux_b_sel<=0;
-		rBranch_taken<=1;
+		rBranch_taken<=0;
+		rJumpTaken<=1;
 		rBranch_dir<=wInstruction[9:0];	
 		rC<=6'b0;		
 	end
 	
 	`BAEQ:
 	begin
+		rJumpTaken<=0;
 		rMux_a_sel<=0;
 		rMux_b_sel<=0;
 		rC<=6'b0;
@@ -257,6 +284,7 @@ begin
 	
 	`BANE:
 	begin
+		rJumpTaken<=0;
 		rMux_a_sel<=0;
 		rMux_b_sel<=0;
 		rC<=6'b0;
@@ -271,6 +299,7 @@ begin
 
 	`BACS:
 	begin
+		rJumpTaken<=0;
 		rMux_a_sel<=0;
 		rMux_b_sel<=0;
 		rC<=6'b0;
@@ -285,6 +314,7 @@ begin
 	
 	`BACC:
 	begin
+		rJumpTaken<=0;
 		rMux_a_sel<=0;
 		rMux_b_sel<=0;
 		rC<=6'b0;
@@ -299,6 +329,7 @@ begin
 	
 	`BAMI:
 	begin
+		rJumpTaken<=0;
 		rMux_a_sel<=0;
 		rMux_b_sel<=0;
 		rC<=6'b0;
@@ -313,6 +344,7 @@ begin
 	
 	`BAPL:
 	begin
+		rJumpTaken<=0;
 		rMux_a_sel<=0;
 		rMux_b_sel<=0;	
 		rC<=6'b0;
@@ -327,6 +359,7 @@ begin
 	
 	`BBEQ:
 	begin
+		rJumpTaken<=0;
 		rMux_a_sel<=0;
 		rMux_b_sel<=0;
 		rC<=6'b0;
@@ -341,6 +374,7 @@ begin
 	
 	`BBNE:
 	begin
+		rJumpTaken<=0;
 		rMux_a_sel<=0;
 		rMux_b_sel<=0;
 		rC<=6'b0;
@@ -355,6 +389,7 @@ begin
 
 	`BBCS:
 	begin
+		rJumpTaken<=0;
 		rMux_a_sel<=0;
 		rMux_b_sel<=0;
 		rC<=6'b0;
@@ -369,6 +404,7 @@ begin
 	
 	`BBCC:
 	begin
+		rJumpTaken<=0;
 		rMux_a_sel<=0;
 		rMux_b_sel<=0;
 		rC<=6'b0;
@@ -383,6 +419,7 @@ begin
 	
 	`BBMI:
 	begin
+		rJumpTaken<=0;
 		rMux_a_sel<=0;
 		rMux_b_sel<=0;
 		rC<=6'b0;
@@ -397,6 +434,7 @@ begin
 	
 	`BBPL:
 	begin
+		rJumpTaken<=0;
 		rMux_a_sel<=0;
 		rMux_b_sel<=0;
 		rC<=6'b0;
@@ -414,6 +452,7 @@ begin
 		rMux_a_sel<=0;
 		rMux_b_sel<=0;
 		rBranch_taken<=0;
+		rJumpTaken<=0;
 		rBranch_dir<=10'b0;
 		rC=8'b0;
 	end

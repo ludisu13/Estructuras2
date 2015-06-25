@@ -1,0 +1,36 @@
+module pc_Decider()
+{
+wire ip;
+assign wIP = (Reset) ? 8'b0 : wDestination;
+
+
+}
+
+
+
+
+
+
+
+
+
+module UPCOUNTER_POSEDGE 
+(
+input wire Clock, Reset,
+input wire [9:0] Initial,
+input wire Enable,
+output reg [SIZE 9:0] Q
+);
+
+
+  always @(posedge Clock )
+  begin
+      if (Reset)
+        Q = Initial;
+      else
+		begin
+		if (Enable)
+			Q = Q + 1;
+			
+		end			
+  end
