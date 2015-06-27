@@ -9,7 +9,7 @@ input wire [9:0] wBranchAddress
 
 wire [9:0]wInitialIP;
 wire [9:0]wDestination;
-assign wInitialIP = (Reset) ? 8'b0 : wDestination;
+assign wInitialIP = (Reset) ? 10'b0 : wDestination;
 assign wIP = (wBranchTaken|wJumpTaken) ? wInitialIP : wIP_temp;
 if(wJumpTaken)
 {
