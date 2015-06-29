@@ -8,6 +8,7 @@ input wire [9:0] wBranchAddress
 );
 
 wire [9:0]wInitialIP;
+wire [9:0] wIP_temp;
 reg [9:0]wDestination;
 assign wInitialIP = (Reset) ? 10'b0 : wDestination;
 assign wIP = (wBranchTaken|wJumpTaken) ? wInitialIP : wIP_temp;
@@ -17,7 +18,7 @@ assign concatenation2 = {5'b00000,wBranchAddress[4],wBranchAddress[3],wBranchAdd
 	UPCOUNTER_POSEDGE IP(
 	.Clock(Clock), 
 	.Reset(Reset | wBranchTaken ),
-	.Initial(wInitialIP + 1),
+	.Initial(wInitialIP + 10'b1),
 	.Enable(1'b1),
 	.Q(wIP_temp)
 	);
