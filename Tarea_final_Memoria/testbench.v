@@ -7,7 +7,8 @@ wire Clock, iWriteEnable, wReadtoa, wReadtob;
 wire [7:0] oDataOuta;
 wire [7:0] oDataOutb;
 wire [9:0] iAddress;
-wire [7:0] iDataIn
+wire [9:0] iReadAddress;
+wire [7:0] iDataIn;
 
 generator g1(
 	.clk(Clock),
@@ -22,6 +23,7 @@ MEMORY m1(
 	.Clock(Clock),
 	.iWriteEnable(iWriteEnable),
 	.iAddress(iAddress),
+	.iReadAddress(iReadAddress),
 	.iReadtoa(wReadtoa),
 	.iReadtob(wReadtob),
 	.iDataIn(iDataIn),
@@ -36,7 +38,7 @@ MEMORY m1(
   begin
     $dumpfile("signals.vcd");
     $dumpvars;
-    #4000 ;
+    #40000 ;
     $display ("Test finished");
     $finish;
    

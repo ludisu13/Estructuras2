@@ -1,0 +1,44 @@
+[*]
+[*] GTKWave Analyzer v3.3.48 (w)1999-2013 BSI
+[*] Tue Jun 30 04:16:07 2015
+[*]
+[dumpfile] "C:\Users\MONGE\Documents\UCR\UCR2015-I\Estructuras de computasoras II\Tarea#45\memory_intento_1\signals.vcd"
+[dumpfile_mtime] "Tue Jun 30 03:53:19 2015"
+[dumpfile_size] 5718
+[savefile] "C:\Users\MONGE\Documents\UCR\UCR2015-I\Estructuras de computasoras II\Tarea#45\memory_intento_1\prueba.sav"
+[timestart] 0
+[size] 1366 706
+[pos] -1 -1
+*-23.013182 250000 250000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] TestMemory.
+[sst_width] 197
+[signals_width] 172
+[sst_expanded] 1
+[sst_vpaned_height] 191
+@28
+TestMemory.Clock
+@24
+TestMemory.iAddress[9:0]
+TestMemory.iDataIn[7:0]
+@28
+TestMemory.iWriteEnable
+@24
+TestMemory.oDataOuta[7:0]
+@c00025
+TestMemory.oDataOutb[7:0]
+@29
+(0)TestMemory.oDataOutb[7:0]
+(1)TestMemory.oDataOutb[7:0]
+(2)TestMemory.oDataOutb[7:0]
+(3)TestMemory.oDataOutb[7:0]
+(4)TestMemory.oDataOutb[7:0]
+(5)TestMemory.oDataOutb[7:0]
+(6)TestMemory.oDataOutb[7:0]
+(7)TestMemory.oDataOutb[7:0]
+@1401201
+-group_end
+@28
+TestMemory.wReadtoa
+TestMemory.wReadtob
+[pattern_trace] 1
+[pattern_trace] 0
