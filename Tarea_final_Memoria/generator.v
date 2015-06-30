@@ -1,5 +1,7 @@
 module generator(clk, validdata, Readtoa, Readtob, iWriteEnable, iAddress);
-output clk,validdata, Readtoa, Readtob, iWriteEnable, iAddress;
+output clk, Readtoa, Readtob, iWriteEnable;
+output [7:0] validdata;
+output [9:0] iAddress;
 
 reloj r1(clk);
 inputs d1(validdata, Readtoa, Readtob, iWriteEnable, iAddress);
