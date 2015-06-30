@@ -7,7 +7,7 @@ wire Clock, iWriteEnable, wReadtoa, wReadtob;
 wire [7:0] oDataOuta;
 wire [7:0] oDataOutb;
 wire [9:0] iAddress;
-wire [7:0] iDataIn
+wire [7:0] iDataIn;
 
 generator g1(
 	.clk(Clock),
