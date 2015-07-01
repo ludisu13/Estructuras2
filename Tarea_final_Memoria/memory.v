@@ -5,6 +5,7 @@ module MEMORY	 # ( parameter DATA_WIDTH= 8, parameter ADDR_WIDTH=10, parameter M
 	input wire						Clock,
 	input wire						iWriteEnable,
 	input wire[ADDR_WIDTH-1:0]		iAddress,
+	input wire[ADDR_WIDTH-1:0]	iReadAddress,
 	input wire						iReadtoa,
 	input wire						iReadtob,
 	input wire[DATA_WIDTH-1:0]		 iDataIn,
@@ -20,12 +21,12 @@ begin
 		if (iWriteEnable && !iReadtoa && !iReadtob) 
 			Memory[iAddress] <= iDataIn; 
 		else if (!iWriteEnable && iReadtoa && !iReadtob)	
-			oDataOuta <= Memory[iAddress]; 
+			oDataOuta <= Memory[iReadAddress]; 
 		else if (!iWriteEnable && !iReadtoa && iReadtob)	
-			oDataOutb <= Memory[iAddress];  
+			oDataOutb <= Memory[iReadAddress];  
 		else
-			oDataOuta <= 8'bz;
-			oDataOutb <= 8'bz;
+			oDataOuta <= 8'b0;
+			oDataOutb <= 8'b0;
 		
 end 
 endmodule

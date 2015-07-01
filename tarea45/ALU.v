@@ -330,7 +330,7 @@ module Banco_Registros(
 	output wire[7:0] oData,
 	output reg oWriteA,
 	output reg oWriteB,
-	output reg wCa, wCb,
+	output reg oCa, oCb,
 	output reg [9:0] oRamAddress,
 	output reg oReadA,oReadB
 );
