@@ -1,7 +1,7 @@
 module WBX(
 
-input wire iReadA,//viene de la ram
-input wire iWriteA,//directo al reg
+input wire iRead,//viene de la ram
+input wire iWrite,//directo al reg
 input wire[7:0]iDataRAM,
 
 input wire[7:0]iDataALU,

@@ -1,5 +1,5 @@
-`include "definitions.v"
-`include "FFD.v"
+//`include "definitions.v"
+//`include "FFD.v"
 
 
 module ALU(

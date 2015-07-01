@@ -13,16 +13,16 @@ module MEMORY	 # ( parameter DATA_WIDTH= 8, parameter ADDR_WIDTH=10, parameter M
 );
 
 reg [DATA_WIDTH-1:0] Memory [MEM_SIZE:0];		
-initial $readmemh("data.txt",Memory);
+//initial $readmemh("data.txt",Memory);
 always @(posedge Clock) 
 begin 
 	
 		if (iWriteEnable) 
 			Memory[iAddress] <= iDataIn; 
 		else if (!iWriteEnable && iReadtoa && !iReadtob)	
-			oDataOuta <= Memory[iReadAddress]; 
+			oDataOuta <= Memory[iAddress]; 
 		else if (!iWriteEnable && !iReadtoa && iReadtob)	
-			oDataOutb <= Memory[iReadAddress];  
+			oDataOutb <= Memory[iAddress];  
 		else
 			oDataOuta <= 8'bz;
 			oDataOutb <= 8'bz;

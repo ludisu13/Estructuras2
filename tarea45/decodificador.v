@@ -1,4 +1,4 @@
-`include "definitions.v"
+//`include "definitions.v"
 module decodificador(
 	input 	wire[15:0] 	wInstruction,
 	input 	wire 		wZa, wZb, wCa, wCb, wNa, wNb,
