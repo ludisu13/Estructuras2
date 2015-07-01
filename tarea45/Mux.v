@@ -1,4 +1,4 @@
-`include "decodificador.v"
+//`include "decodificador.v"
 module Mux2 # ( parameter SIZE=6 )
 (
 	input wire				wSelect,
@@ -9,14 +9,14 @@ module Mux2 # ( parameter SIZE=6 )
 
 always @(wSelect)
 	begin
-		if(Select)
+		if(wSelect)
 			rOut<=wB;
 		else
 			rOut<=wA;
 	end
 endmodule
 
-
+/*
 
 Mux2 #(8) Mux_A
 (
@@ -32,4 +32,4 @@ Mux2 #(8) Mux_B
 	.wA(),
 	.wB(rC),
 	.rOut()
-);
+);*/

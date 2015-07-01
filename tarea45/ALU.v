@@ -314,7 +314,7 @@ always @ ( * )
 	
 		
 endmodule 
-
+/*
 module Banco_Registros(
 
 	input wire Clock,
@@ -415,4 +415,4 @@ FFD_POSEDGE_SYNCRONOUS_RESET # ( 1 ) FFD9
 	.D(iReadB),
 	.Q(oReadB)
 );
-endmodule 
+endmodule */

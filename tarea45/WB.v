@@ -14,7 +14,7 @@ output wire [7:0]oRegister
 
 
 
-assign oRegister= (iReadA||iWriteA) ? ( iReadA ? iDataRam:iDataALU)  :iRegister;
+assign oRegister= (iRead||iWrite) ? ( iRead ? iDataRAM:iDataALU)  :iRegister;
 
 
 

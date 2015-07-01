@@ -6,7 +6,8 @@ input wire wBranchTaken,
 input wire wJumpTaken,
 input wire [9:0] wBranchAddress
 );
-
+wire [9:0] concatenation1;
+wire [9:0] concatenation2;
 wire [9:0]wInitialIP;
 wire [9:0] wIP_temp;
 reg [9:0]wDestination;
