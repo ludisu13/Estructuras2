@@ -40,6 +40,7 @@ pc_Decider pc1(
 wire a_sel;
 wire b_sel;
 decodificador dec1(
+.Clock(Clock),
 .wInstruction(wInstruction),
 .wZa(wAreg==6'b0),
 .wZb(wBreg==6'b0),
