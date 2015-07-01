@@ -1,0 +1,2482 @@
+$date
+	Wed Jul 01 00:31:57 2015
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module BancoPruebas $end
+$var wire 8 ! A [7:0] $end
+$var wire 8 " B [7:0] $end
+$var wire 1 # Clock $end
+$var wire 1 $ ReadA $end
+$var wire 1 % ReadAtoRam $end
+$var wire 1 & ReadAtoWB $end
+$var wire 1 ' ReadB $end
+$var wire 1 ( ReadBtoRam $end
+$var wire 1 ) ReadBtoWB $end
+$var wire 1 * Reset $end
+$var wire 1 + a_sel $end
+$var wire 1 , b_sel $end
+$var wire 10 - oRamAddress [9:0] $end
+$var wire 1 . oRamEnableWrite $end
+$var wire 8 / outAlu [7:0] $end
+$var wire 8 0 outAlutoRam [7:0] $end
+$var wire 8 1 outAlutoWB [7:0] $end
+$var wire 8 2 rConstant [7:0] $end
+$var wire 8 3 ramA [7:0] $end
+$var wire 8 4 ramB [7:0] $end
+$var wire 10 5 wAddress [9:0] $end
+$var wire 8 6 wAreg [7:0] $end
+$var wire 10 7 wBranchAddress [9:0] $end
+$var wire 1 8 wBranchTaken $end
+$var wire 8 9 wBreg [7:0] $end
+$var wire 1 : wCa $end
+$var wire 1 ; wCb $end
+$var wire 16 < wInstruction [15:0] $end
+$var wire 16 = wInstructionToAlu [15:0] $end
+$var wire 1 > wJumpTaken $end
+$var wire 8 ? wOut_Mux_A [7:0] $end
+$var wire 8 @ wOut_Mux_B [7:0] $end
+$var wire 10 A wRamAddress [9:0] $end
+$var wire 1 B wRamEnable $end
+$var wire 1 C wWriteA $end
+$var wire 1 D wWriteABUF $end
+$var wire 1 E wWriteAtoWB $end
+$var wire 1 F wWriteB $end
+$var wire 1 G wWriteBBUF $end
+$var wire 1 H wWriteBtoWB $end
+$scope module g1 $end
+$var wire 1 # clock $end
+$var reg 1 I reset $end
+$scope module reloj $end
+$var reg 1 J clk $end
+$upscope $end
+$upscope $end
+$scope module r1 $end
+$var wire 10 K iAddress [9:0] $end
+$var reg 16 L oInstruction [15:0] $end
+$upscope $end
+$scope module pc1 $end
+$var wire 1 # Clock $end
+$var wire 1 * Reset $end
+$var wire 10 M concatenation1 [9:0] $end
+$var wire 10 N concatenation2 [9:0] $end
+$var wire 10 O wBranchAddress [9:0] $end
+$var wire 1 8 wBranchTaken $end
+$var wire 10 P wIP [9:0] $end
+$var wire 10 Q wIP_temp [9:0] $end
+$var wire 10 R wInitialIP [9:0] $end
+$var wire 1 > wJumpTaken $end
+$var reg 10 S wDestination [9:0] $end
+$scope module IP $end
+$var wire 1 # Clock $end
+$var wire 1 T Enable $end
+$var wire 10 U Initial [9:0] $end
+$var wire 1 V Reset $end
+$var reg 10 W Q [9:0] $end
+$upscope $end
+$upscope $end
+$scope module dec1 $end
+$var wire 1 # Clock $end
+$var wire 1 : wCa $end
+$var wire 1 ; wCb $end
+$var wire 16 X wInstruction [15:0] $end
+$var wire 1 Y wNa $end
+$var wire 1 Z wNb $end
+$var wire 1 [ wZa $end
+$var wire 1 \ wZb $end
+$var reg 10 ] rBranch_dir [9:0] $end
+$var reg 1 ^ rBranch_taken $end
+$var reg 8 _ rC [7:0] $end
+$var reg 1 ` rJumpTaken $end
+$var reg 1 a rMux_a_sel $end
+$var reg 1 b rMux_b_sel $end
+$upscope $end
+$scope module muxa $end
+$var wire 8 c wA [7:0] $end
+$var wire 8 d wB [7:0] $end
+$var wire 1 + wSelect $end
+$var reg 8 e rOut [7:0] $end
+$upscope $end
+$scope module FFDInstruciton $end
+$var wire 1 # Clock $end
+$var wire 16 f D [15:0] $end
+$var wire 1 g Enable $end
+$var wire 1 * Reset $end
+$var reg 16 h Q [15:0] $end
+$upscope $end
+$scope module muxb $end
+$var wire 8 i wA [7:0] $end
+$var wire 8 j wB [7:0] $end
+$var wire 1 , wSelect $end
+$var reg 8 k rOut [7:0] $end
+$upscope $end
+$scope module alu $end
+$var wire 8 l iA [7:0] $end
+$var wire 8 m iB [7:0] $end
+$var wire 8 n oData [7:0] $end
+$var wire 16 o wInstruction [15:0] $end
+$var reg 10 p oRamAddress [9:0] $end
+$var reg 1 q oRamEnableWrite $end
+$var reg 1 r oReadA $end
+$var reg 1 s oReadB $end
+$var reg 1 t oWriteA $end
+$var reg 1 u oWriteB $end
+$var reg 9 v rEx [8:0] $end
+$var reg 1 w wCa $end
+$var reg 1 x wCb $end
+$upscope $end
+$scope module FFDalutoram $end
+$var wire 1 # Clock $end
+$var wire 8 y D [7:0] $end
+$var wire 1 z Enable $end
+$var wire 1 * Reset $end
+$var reg 8 { Q [7:0] $end
+$upscope $end
+$scope module FFDalutowb $end
+$var wire 1 # Clock $end
+$var wire 8 | D [7:0] $end
+$var wire 1 } Enable $end
+$var wire 1 * Reset $end
+$var reg 8 ~ Q [7:0] $end
+$upscope $end
+$scope module FFDReadAtoram $end
+$var wire 1 # Clock $end
+$var wire 1 $ D $end
+$var wire 1 !" Enable $end
+$var wire 1 * Reset $end
+$var reg 1 "" Q $end
+$upscope $end
+$scope module FFDReadAtowb $end
+$var wire 1 # Clock $end
+$var wire 1 % D $end
+$var wire 1 #" Enable $end
+$var wire 1 * Reset $end
+$var reg 1 $" Q $end
+$upscope $end
+$scope module FFDReadBtoram $end
+$var wire 1 # Clock $end
+$var wire 1 ' D $end
+$var wire 1 %" Enable $end
+$var wire 1 * Reset $end
+$var reg 1 &" Q $end
+$upscope $end
+$scope module FFDReadBtowb $end
+$var wire 1 # Clock $end
+$var wire 1 ( D $end
+$var wire 1 '" Enable $end
+$var wire 1 * Reset $end
+$var reg 1 (" Q $end
+$upscope $end
+$scope module FFDWriteAtoram $end
+$var wire 1 # Clock $end
+$var wire 1 C D $end
+$var wire 1 )" Enable $end
+$var wire 1 * Reset $end
+$var reg 1 *" Q $end
+$upscope $end
+$scope module FFDWriteAtowb $end
+$var wire 1 # Clock $end
+$var wire 1 D D $end
+$var wire 1 +" Enable $end
+$var wire 1 * Reset $end
+$var reg 1 ," Q $end
+$upscope $end
+$scope module FFDWriteBtoram $end
+$var wire 1 # Clock $end
+$var wire 1 F D $end
+$var wire 1 -" Enable $end
+$var wire 1 * Reset $end
+$var reg 1 ." Q $end
+$upscope $end
+$scope module FFDWriteBtowb $end
+$var wire 1 # Clock $end
+$var wire 1 G D $end
+$var wire 1 /" Enable $end
+$var wire 1 * Reset $end
+$var reg 1 0" Q $end
+$upscope $end
+$scope module FFDramenable $end
+$var wire 1 # Clock $end
+$var wire 1 B D $end
+$var wire 1 1" Enable $end
+$var wire 1 * Reset $end
+$var reg 1 2" Q $end
+$upscope $end
+$scope module FFDRamaddress $end
+$var wire 1 # Clock $end
+$var wire 10 3" D [9:0] $end
+$var wire 1 4" Enable $end
+$var wire 1 * Reset $end
+$var reg 10 5" Q [9:0] $end
+$upscope $end
+$scope module ram_memory $end
+$var wire 1 # Clock $end
+$var wire 10 6" iAddress [9:0] $end
+$var wire 8 7" iDataIn [7:0] $end
+$var wire 1 % iReadtoa $end
+$var wire 1 ( iReadtob $end
+$var wire 1 . iWriteEnable $end
+$var reg 8 8" oDataOuta [7:0] $end
+$var reg 8 9" oDataOutb [7:0] $end
+$upscope $end
+$scope module WBA $end
+$var wire 8 :" iDataALU [7:0] $end
+$var wire 8 ;" iDataRAM [7:0] $end
+$var wire 1 & iRead $end
+$var wire 8 <" iRegister [7:0] $end
+$var wire 1 E iWrite $end
+$var wire 8 =" oRegister [7:0] $end
+$upscope $end
+$scope module WBB $end
+$var wire 8 >" iDataALU [7:0] $end
+$var wire 8 ?" iDataRAM [7:0] $end
+$var wire 1 ) iRead $end
+$var wire 8 @" iRegister [7:0] $end
+$var wire 1 H iWrite $end
+$var wire 8 A" oRegister [7:0] $end
+$upscope $end
+$scope module FFDA $end
+$var wire 1 # Clock $end
+$var wire 8 B" D [7:0] $end
+$var wire 1 C" Enable $end
+$var wire 1 * Reset $end
+$var reg 8 D" Q [7:0] $end
+$upscope $end
+$scope module FFDB $end
+$var wire 1 # Clock $end
+$var wire 8 E" D [7:0] $end
+$var wire 1 F" Enable $end
+$var wire 1 * Reset $end
+$var reg 8 G" Q [7:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+bx G"
+1F"
+bx E"
+bx D"
+1C"
+bx B"
+bx A"
+bx @"
+bx ?"
+bx >"
+bx ="
+bx <"
+bx ;"
+bx :"
+bx 9"
+bx 8"
+bx 7"
+bx 6"
+bx 5"
+14"
+bx 3"
+x2"
+11"
+x0"
+1/"
+x."
+1-"
+x,"
+1+"
+x*"
+1)"
+x("
+1'"
+x&"
+1%"
+x$"
+1#"
+x""
+1!"
+bx ~
+1}
+bx |
+bx {
+1z
+bx y
+xx
+xw
+bx v
+xu
+xt
+xs
+xr
+xq
+bx p
+bx o
+bx n
+bx m
+bx l
+bx k
+bx j
+bx i
+bx h
+1g
+bx f
+bx e
+bx d
+bx c
+xb
+xa
+x`
+bx _
+x^
+bx ]
+x\
+x[
+xZ
+xY
+bx X
+bx W
+1V
+b0 U
+1T
+bx S
+b0 R
+bx Q
+bx P
+bx O
+b0xxxxx N
+b0xxxxx M
+bx L
+bx K
+xJ
+1I
+xH
+xG
+xF
+xE
+xD
+xC
+xB
+bx A
+bx @
+bx ?
+x>
+bx =
+bx <
+x;
+x:
+bx 9
+x8
+bx 7
+bx 6
+bx 5
+bx 4
+bx 3
+bx 2
+bx 1
+bx 0
+bx /
+x.
+bx -
+x,
+x+
+1*
+x)
+x(
+x'
+x&
+x%
+x$
+x#
+bx "
+bx !
+$end
+#250000
+0J
+0#
+#500000
+b0 N
+b0 M
+b0 ]
+b0 7
+b0 O
+0`
+0>
+0^
+08
+0b
+0,
+0a
+0+
+bz 9"
+bz 4
+bz ?"
+bz 8"
+bz 3
+bz ;"
+b100000000 L
+b100000000 <
+b100000000 X
+b100000000 f
+b0 5
+b0 K
+b0 P
+b0 W
+b0 Q
+b0 _
+b0 2
+b0 d
+b0 j
+1J
+1#
+#750000
+0J
+0#
+#1000000
+0s
+0'
+0r
+0$
+0u
+0F
+0t
+0C
+0q
+0B
+b100000000 p
+b100000000 A
+b100000000 3"
+b100000000 h
+b100000000 =
+b100000000 o
+b1000000000 L
+b1000000000 <
+b1000000000 X
+b1000000000 f
+b1 5
+b1 K
+b1 P
+b0 S
+b1 W
+b1 Q
+0V
+b0 U
+b0 R
+1J
+1#
+0I
+0*
+#1250000
+0J
+0#
+#1500000
+b1000000000 p
+b1000000000 A
+b1000000000 3"
+b1000000000 h
+b1000000000 =
+b1000000000 o
+0""
+0%
+0&"
+0(
+0*"
+0D
+0."
+0G
+02"
+0.
+b100000000 5"
+b100000000 -
+b100000000 6"
+b1100000000 L
+b1100000000 <
+b1100000000 X
+b1100000000 f
+b10 5
+b10 K
+b10 P
+b1 U
+b1 R
+b10 W
+b10 Q
+b1 S
+1J
+1#
+#1750000
+0J
+0#
+#2000000
+b1100000000 p
+b1100000000 A
+b1100000000 3"
+b1000000000 5"
+b1000000000 -
+b1000000000 6"
+00"
+0H
+0,"
+0E
+0("
+0)
+0$"
+0&
+b1100000000 h
+b1100000000 =
+b1100000000 o
+b10000000000 L
+b10000000000 <
+b10000000000 X
+b10000000000 f
+b10 U
+b10 R
+b11 5
+b11 K
+b11 P
+b10 S
+b11 W
+b11 Q
+1J
+1#
+#2250000
+0J
+0#
+#2500000
+b0 p
+b0 A
+b0 3"
+b10000000000 h
+b10000000000 =
+b10000000000 o
+b1100000000 5"
+b1100000000 -
+b1100000000 6"
+b11000000000 L
+b11000000000 <
+b11000000000 X
+b11000000000 f
+b100 5
+b100 K
+b100 P
+b11 U
+b11 R
+b100 W
+b100 Q
+b11 S
+1J
+1#
+#2750000
+0J
+0#
+#3000000
+b1000000000 p
+b1000000000 A
+b1000000000 3"
+b0 5"
+b0 -
+b0 6"
+b11000000000 h
+b11000000000 =
+b11000000000 o
+bx L
+bx <
+bx X
+bx f
+b100 U
+b100 R
+b101 5
+b101 K
+b101 P
+b100 S
+b101 W
+b101 Q
+1J
+1#
+#3250000
+0J
+0#
+#3500000
+bx p
+bx A
+bx 3"
+bx h
+bx =
+bx o
+b1000000000 5"
+b1000000000 -
+b1000000000 6"
+b110 5
+b110 K
+b110 P
+b101 U
+b101 R
+b110 W
+b110 Q
+b101 S
+1J
+1#
+#3750000
+0J
+0#
+#4000000
+bx 5"
+bx -
+bx 6"
+b110 U
+b110 R
+b111 5
+b111 K
+b111 P
+b110 S
+b111 W
+b111 Q
+1J
+1#
+#4250000
+0J
+0#
+#4500000
+b1000 5
+b1000 K
+b1000 P
+b111 U
+b111 R
+b1000 W
+b1000 Q
+b111 S
+1J
+1#
+#4750000
+0J
+0#
+#5000000
+b1000 U
+b1000 R
+b1001 5
+b1001 K
+b1001 P
+b1000 S
+b1001 W
+b1001 Q
+1J
+1#
+#5250000
+0J
+0#
+#5500000
+b1010 5
+b1010 K
+b1010 P
+b1001 U
+b1001 R
+b1010 W
+b1010 Q
+b1001 S
+1J
+1#
+#5750000
+0J
+0#
+#6000000
+b1010 U
+b1010 R
+b1011 5
+b1011 K
+b1011 P
+b1010 S
+b1011 W
+b1011 Q
+1J
+1#
+#6250000
+0J
+0#
+#6500000
+b1100 5
+b1100 K
+b1100 P
+b1011 U
+b1011 R
+b1100 W
+b1100 Q
+b1011 S
+1J
+1#
+#6750000
+0J
+0#
+#7000000
+b1100 U
+b1100 R
+b1101 5
+b1101 K
+b1101 P
+b1100 S
+b1101 W
+b1101 Q
+1J
+1#
+#7250000
+0J
+0#
+#7500000
+b1110 5
+b1110 K
+b1110 P
+b1101 U
+b1101 R
+b1110 W
+b1110 Q
+b1101 S
+1J
+1#
+#7750000
+0J
+0#
+#8000000
+b1110 U
+b1110 R
+b1111 5
+b1111 K
+b1111 P
+b1110 S
+b1111 W
+b1111 Q
+1J
+1#
+#8250000
+0J
+0#
+#8500000
+b10000 5
+b10000 K
+b10000 P
+b1111 U
+b1111 R
+b10000 W
+b10000 Q
+b1111 S
+1J
+1#
+#8750000
+0J
+0#
+#9000000
+b10000 U
+b10000 R
+b10001 5
+b10001 K
+b10001 P
+b10000 S
+b10001 W
+b10001 Q
+1J
+1#
+#9250000
+0J
+0#
+#9500000
+b10010 5
+b10010 K
+b10010 P
+b10001 U
+b10001 R
+b10010 W
+b10010 Q
+b10001 S
+1J
+1#
+#9750000
+0J
+0#
+#10000000
+b10010 U
+b10010 R
+b10011 5
+b10011 K
+b10011 P
+b10010 S
+b10011 W
+b10011 Q
+1J
+1#
+#10250000
+0J
+0#
+#10500000
+b10100 5
+b10100 K
+b10100 P
+b10011 U
+b10011 R
+b10100 W
+b10100 Q
+b10011 S
+1J
+1#
+#10750000
+0J
+0#
+#11000000
+b10100 U
+b10100 R
+b10101 5
+b10101 K
+b10101 P
+b10100 S
+b10101 W
+b10101 Q
+1J
+1#
+#11250000
+0J
+0#
+#11500000
+b10110 5
+b10110 K
+b10110 P
+b10101 U
+b10101 R
+b10110 W
+b10110 Q
+b10101 S
+1J
+1#
+#11750000
+0J
+0#
+#12000000
+b10110 U
+b10110 R
+b10111 5
+b10111 K
+b10111 P
+b10110 S
+b10111 W
+b10111 Q
+1J
+1#
+#12250000
+0J
+0#
+#12500000
+b11000 5
+b11000 K
+b11000 P
+b10111 U
+b10111 R
+b11000 W
+b11000 Q
+b10111 S
+1J
+1#
+#12750000
+0J
+0#
+#13000000
+b11000 U
+b11000 R
+b11001 5
+b11001 K
+b11001 P
+b11000 S
+b11001 W
+b11001 Q
+1J
+1#
+#13250000
+0J
+0#
+#13500000
+b11010 5
+b11010 K
+b11010 P
+b11001 U
+b11001 R
+b11010 W
+b11010 Q
+b11001 S
+1J
+1#
+#13750000
+0J
+0#
+#14000000
+b11010 U
+b11010 R
+b11011 5
+b11011 K
+b11011 P
+b11010 S
+b11011 W
+b11011 Q
+1J
+1#
+#14250000
+0J
+0#
+#14500000
+b11100 5
+b11100 K
+b11100 P
+b11011 U
+b11011 R
+b11100 W
+b11100 Q
+b11011 S
+1J
+1#
+#14750000
+0J
+0#
+#15000000
+b11100 U
+b11100 R
+b11101 5
+b11101 K
+b11101 P
+b11100 S
+b11101 W
+b11101 Q
+1J
+1#
+#15250000
+0J
+0#
+#15500000
+b11110 5
+b11110 K
+b11110 P
+b11101 U
+b11101 R
+b11110 W
+b11110 Q
+b11101 S
+1J
+1#
+#15750000
+0J
+0#
+#16000000
+b11110 U
+b11110 R
+b11111 5
+b11111 K
+b11111 P
+b11110 S
+b11111 W
+b11111 Q
+1J
+1#
+#16250000
+0J
+0#
+#16500000
+b100000 5
+b100000 K
+b100000 P
+b11111 U
+b11111 R
+b100000 W
+b100000 Q
+b11111 S
+1J
+1#
+#16750000
+0J
+0#
+#17000000
+b100000 U
+b100000 R
+b100001 5
+b100001 K
+b100001 P
+b100000 S
+b100001 W
+b100001 Q
+1J
+1#
+#17250000
+0J
+0#
+#17500000
+b100010 5
+b100010 K
+b100010 P
+b100001 U
+b100001 R
+b100010 W
+b100010 Q
+b100001 S
+1J
+1#
+#17750000
+0J
+0#
+#18000000
+b100010 U
+b100010 R
+b100011 5
+b100011 K
+b100011 P
+b100010 S
+b100011 W
+b100011 Q
+1J
+1#
+#18250000
+0J
+0#
+#18500000
+b100100 5
+b100100 K
+b100100 P
+b100011 U
+b100011 R
+b100100 W
+b100100 Q
+b100011 S
+1J
+1#
+#18750000
+0J
+0#
+#19000000
+b100100 U
+b100100 R
+b100101 5
+b100101 K
+b100101 P
+b100100 S
+b100101 W
+b100101 Q
+1J
+1#
+#19250000
+0J
+0#
+#19500000
+b100110 5
+b100110 K
+b100110 P
+b100101 U
+b100101 R
+b100110 W
+b100110 Q
+b100101 S
+1J
+1#
+#19750000
+0J
+0#
+#20000000
+b100110 U
+b100110 R
+b100111 5
+b100111 K
+b100111 P
+b100110 S
+b100111 W
+b100111 Q
+1J
+1#
+#20250000
+0J
+0#
+#20500000
+b101000 5
+b101000 K
+b101000 P
+b100111 U
+b100111 R
+b101000 W
+b101000 Q
+b100111 S
+1J
+1#
+#20750000
+0J
+0#
+#21000000
+b101000 U
+b101000 R
+b101001 5
+b101001 K
+b101001 P
+b101000 S
+b101001 W
+b101001 Q
+1J
+1#
+#21250000
+0J
+0#
+#21500000
+b101010 5
+b101010 K
+b101010 P
+b101001 U
+b101001 R
+b101010 W
+b101010 Q
+b101001 S
+1J
+1#
+#21750000
+0J
+0#
+#22000000
+b101010 U
+b101010 R
+b101011 5
+b101011 K
+b101011 P
+b101010 S
+b101011 W
+b101011 Q
+1J
+1#
+#22250000
+0J
+0#
+#22500000
+b101100 5
+b101100 K
+b101100 P
+b101011 U
+b101011 R
+b101100 W
+b101100 Q
+b101011 S
+1J
+1#
+#22750000
+0J
+0#
+#23000000
+b101100 U
+b101100 R
+b101101 5
+b101101 K
+b101101 P
+b101100 S
+b101101 W
+b101101 Q
+1J
+1#
+#23250000
+0J
+0#
+#23500000
+b101110 5
+b101110 K
+b101110 P
+b101101 U
+b101101 R
+b101110 W
+b101110 Q
+b101101 S
+1J
+1#
+#23750000
+0J
+0#
+#24000000
+b101110 U
+b101110 R
+b101111 5
+b101111 K
+b101111 P
+b101110 S
+b101111 W
+b101111 Q
+1J
+1#
+#24250000
+0J
+0#
+#24500000
+b110000 5
+b110000 K
+b110000 P
+b101111 U
+b101111 R
+b110000 W
+b110000 Q
+b101111 S
+1J
+1#
+#24750000
+0J
+0#
+#25000000
+b110000 U
+b110000 R
+b110001 5
+b110001 K
+b110001 P
+b110000 S
+b110001 W
+b110001 Q
+1J
+1#
+#25250000
+0J
+0#
+#25500000
+b110010 5
+b110010 K
+b110010 P
+b110001 U
+b110001 R
+b110010 W
+b110010 Q
+b110001 S
+1J
+1#
+#25750000
+0J
+0#
+#26000000
+b110010 U
+b110010 R
+b110011 5
+b110011 K
+b110011 P
+b110010 S
+b110011 W
+b110011 Q
+1J
+1#
+#26250000
+0J
+0#
+#26500000
+b110100 5
+b110100 K
+b110100 P
+b110011 U
+b110011 R
+b110100 W
+b110100 Q
+b110011 S
+1J
+1#
+#26750000
+0J
+0#
+#27000000
+b110100 U
+b110100 R
+b110101 5
+b110101 K
+b110101 P
+b110100 S
+b110101 W
+b110101 Q
+1J
+1#
+#27250000
+0J
+0#
+#27500000
+b110110 5
+b110110 K
+b110110 P
+b110101 U
+b110101 R
+b110110 W
+b110110 Q
+b110101 S
+1J
+1#
+#27750000
+0J
+0#
+#28000000
+b110110 U
+b110110 R
+b110111 5
+b110111 K
+b110111 P
+b110110 S
+b110111 W
+b110111 Q
+1J
+1#
+#28250000
+0J
+0#
+#28500000
+b111000 5
+b111000 K
+b111000 P
+b110111 U
+b110111 R
+b111000 W
+b111000 Q
+b110111 S
+1J
+1#
+#28750000
+0J
+0#
+#29000000
+b111000 U
+b111000 R
+b111001 5
+b111001 K
+b111001 P
+b111000 S
+b111001 W
+b111001 Q
+1J
+1#
+#29250000
+0J
+0#
+#29500000
+b111010 5
+b111010 K
+b111010 P
+b111001 U
+b111001 R
+b111010 W
+b111010 Q
+b111001 S
+1J
+1#
+#29750000
+0J
+0#
+#30000000
+b111010 U
+b111010 R
+b111011 5
+b111011 K
+b111011 P
+b111010 S
+b111011 W
+b111011 Q
+1J
+1#
+#30250000
+0J
+0#
+#30500000
+b111100 5
+b111100 K
+b111100 P
+b111011 U
+b111011 R
+b111100 W
+b111100 Q
+b111011 S
+1J
+1#
+#30750000
+0J
+0#
+#31000000
+b111100 U
+b111100 R
+b111101 5
+b111101 K
+b111101 P
+b111100 S
+b111101 W
+b111101 Q
+1J
+1#
+#31250000
+0J
+0#
+#31500000
+b111110 5
+b111110 K
+b111110 P
+b111101 U
+b111101 R
+b111110 W
+b111110 Q
+b111101 S
+1J
+1#
+#31750000
+0J
+0#
+#32000000
+b111110 U
+b111110 R
+b111111 5
+b111111 K
+b111111 P
+b111110 S
+b111111 W
+b111111 Q
+1J
+1#
+#32250000
+0J
+0#
+#32500000
+b1000000 5
+b1000000 K
+b1000000 P
+b111111 U
+b111111 R
+b1000000 W
+b1000000 Q
+b111111 S
+1J
+1#
+#32750000
+0J
+0#
+#33000000
+b1000000 U
+b1000000 R
+b1000001 5
+b1000001 K
+b1000001 P
+b1000000 S
+b1000001 W
+b1000001 Q
+1J
+1#
+#33250000
+0J
+0#
+#33500000
+b1000010 5
+b1000010 K
+b1000010 P
+b1000001 U
+b1000001 R
+b1000010 W
+b1000010 Q
+b1000001 S
+1J
+1#
+#33750000
+0J
+0#
+#34000000
+b1000010 U
+b1000010 R
+b1000011 5
+b1000011 K
+b1000011 P
+b1000010 S
+b1000011 W
+b1000011 Q
+1J
+1#
+#34250000
+0J
+0#
+#34500000
+b1000100 5
+b1000100 K
+b1000100 P
+b1000011 U
+b1000011 R
+b1000100 W
+b1000100 Q
+b1000011 S
+1J
+1#
+#34750000
+0J
+0#
+#35000000
+b1000100 U
+b1000100 R
+b1000101 5
+b1000101 K
+b1000101 P
+b1000100 S
+b1000101 W
+b1000101 Q
+1J
+1#
+#35250000
+0J
+0#
+#35500000
+b1000110 5
+b1000110 K
+b1000110 P
+b1000101 U
+b1000101 R
+b1000110 W
+b1000110 Q
+b1000101 S
+1J
+1#
+#35750000
+0J
+0#
+#36000000
+b1000110 U
+b1000110 R
+b1000111 5
+b1000111 K
+b1000111 P
+b1000110 S
+b1000111 W
+b1000111 Q
+1J
+1#
+#36250000
+0J
+0#
+#36500000
+b1001000 5
+b1001000 K
+b1001000 P
+b1000111 U
+b1000111 R
+b1001000 W
+b1001000 Q
+b1000111 S
+1J
+1#
+#36750000
+0J
+0#
+#37000000
+b1001000 U
+b1001000 R
+b1001001 5
+b1001001 K
+b1001001 P
+b1001000 S
+b1001001 W
+b1001001 Q
+1J
+1#
+#37250000
+0J
+0#
+#37500000
+b1001010 5
+b1001010 K
+b1001010 P
+b1001001 U
+b1001001 R
+b1001010 W
+b1001010 Q
+b1001001 S
+1J
+1#
+#37750000
+0J
+0#
+#38000000
+b1001010 U
+b1001010 R
+b1001011 5
+b1001011 K
+b1001011 P
+b1001010 S
+b1001011 W
+b1001011 Q
+1J
+1#
+#38250000
+0J
+0#
+#38500000
+b1001100 5
+b1001100 K
+b1001100 P
+b1001011 U
+b1001011 R
+b1001100 W
+b1001100 Q
+b1001011 S
+1J
+1#
+#38750000
+0J
+0#
+#39000000
+b1001100 U
+b1001100 R
+b1001101 5
+b1001101 K
+b1001101 P
+b1001100 S
+b1001101 W
+b1001101 Q
+1J
+1#
+#39250000
+0J
+0#
+#39500000
+b1001110 5
+b1001110 K
+b1001110 P
+b1001101 U
+b1001101 R
+b1001110 W
+b1001110 Q
+b1001101 S
+1J
+1#
+#39750000
+0J
+0#
+#40000000
+b1001110 U
+b1001110 R
+b1001111 5
+b1001111 K
+b1001111 P
+b1001110 S
+b1001111 W
+b1001111 Q
+1J
+1#
+#40250000
+0J
+0#
+#40500000
+b1010000 5
+b1010000 K
+b1010000 P
+b1001111 U
+b1001111 R
+b1010000 W
+b1010000 Q
+b1001111 S
+1J
+1#
+#40750000
+0J
+0#
+#41000000
+b1010000 U
+b1010000 R
+b1010001 5
+b1010001 K
+b1010001 P
+b1010000 S
+b1010001 W
+b1010001 Q
+1J
+1#
+#41250000
+0J
+0#
+#41500000
+b1010010 5
+b1010010 K
+b1010010 P
+b1010001 U
+b1010001 R
+b1010010 W
+b1010010 Q
+b1010001 S
+1J
+1#
+#41750000
+0J
+0#
+#42000000
+b1010010 U
+b1010010 R
+b1010011 5
+b1010011 K
+b1010011 P
+b1010010 S
+b1010011 W
+b1010011 Q
+1J
+1#
+#42250000
+0J
+0#
+#42500000
+b1010100 5
+b1010100 K
+b1010100 P
+b1010011 U
+b1010011 R
+b1010100 W
+b1010100 Q
+b1010011 S
+1J
+1#
+#42750000
+0J
+0#
+#43000000
+b1010100 U
+b1010100 R
+b1010101 5
+b1010101 K
+b1010101 P
+b1010100 S
+b1010101 W
+b1010101 Q
+1J
+1#
+#43250000
+0J
+0#
+#43500000
+b1010110 5
+b1010110 K
+b1010110 P
+b1010101 U
+b1010101 R
+b1010110 W
+b1010110 Q
+b1010101 S
+1J
+1#
+#43750000
+0J
+0#
+#44000000
+b1010110 U
+b1010110 R
+b1010111 5
+b1010111 K
+b1010111 P
+b1010110 S
+b1010111 W
+b1010111 Q
+1J
+1#
+#44250000
+0J
+0#
+#44500000
+b1011000 5
+b1011000 K
+b1011000 P
+b1010111 U
+b1010111 R
+b1011000 W
+b1011000 Q
+b1010111 S
+1J
+1#
+#44750000
+0J
+0#
+#45000000
+b1011000 U
+b1011000 R
+b1011001 5
+b1011001 K
+b1011001 P
+b1011000 S
+b1011001 W
+b1011001 Q
+1J
+1#
+#45250000
+0J
+0#
+#45500000
+b1011010 5
+b1011010 K
+b1011010 P
+b1011001 U
+b1011001 R
+b1011010 W
+b1011010 Q
+b1011001 S
+1J
+1#
+#45750000
+0J
+0#
+#46000000
+b1011010 U
+b1011010 R
+b1011011 5
+b1011011 K
+b1011011 P
+b1011010 S
+b1011011 W
+b1011011 Q
+1J
+1#
+#46250000
+0J
+0#
+#46500000
+b1011100 5
+b1011100 K
+b1011100 P
+b1011011 U
+b1011011 R
+b1011100 W
+b1011100 Q
+b1011011 S
+1J
+1#
+#46750000
+0J
+0#
+#47000000
+b1011100 U
+b1011100 R
+b1011101 5
+b1011101 K
+b1011101 P
+b1011100 S
+b1011101 W
+b1011101 Q
+1J
+1#
+#47250000
+0J
+0#
+#47500000
+b1011110 5
+b1011110 K
+b1011110 P
+b1011101 U
+b1011101 R
+b1011110 W
+b1011110 Q
+b1011101 S
+1J
+1#
+#47750000
+0J
+0#
+#48000000
+b1011110 U
+b1011110 R
+b1011111 5
+b1011111 K
+b1011111 P
+b1011110 S
+b1011111 W
+b1011111 Q
+1J
+1#
+#48250000
+0J
+0#
+#48500000
+b1100000 5
+b1100000 K
+b1100000 P
+b1011111 U
+b1011111 R
+b1100000 W
+b1100000 Q
+b1011111 S
+1J
+1#
+#48750000
+0J
+0#
+#49000000
+b1100000 U
+b1100000 R
+b1100001 5
+b1100001 K
+b1100001 P
+b1100000 S
+b1100001 W
+b1100001 Q
+1J
+1#
+#49250000
+0J
+0#
+#49500000
+b1100010 5
+b1100010 K
+b1100010 P
+b1100001 U
+b1100001 R
+b1100010 W
+b1100010 Q
+b1100001 S
+1J
+1#
+#49750000
+0J
+0#
+#50000000
+b1100010 U
+b1100010 R
+b1100011 5
+b1100011 K
+b1100011 P
+b1100010 S
+b1100011 W
+b1100011 Q
+1J
+1#
+#50250000
+0J
+0#
+#50500000
+b1100100 5
+b1100100 K
+b1100100 P
+b1100011 U
+b1100011 R
+b1100100 W
+b1100100 Q
+b1100011 S
+1J
+1#
+#50750000
+0J
+0#
+#51000000
+b1100100 U
+b1100100 R
+b1100101 5
+b1100101 K
+b1100101 P
+b1100100 S
+b1100101 W
+b1100101 Q
+1J
+1#
+#51250000
+0J
+0#
+#51500000
+b1100110 5
+b1100110 K
+b1100110 P
+b1100101 U
+b1100101 R
+b1100110 W
+b1100110 Q
+b1100101 S
+1J
+1#
+#51750000
+0J
+0#
+#52000000
+b1100110 U
+b1100110 R
+b1100111 5
+b1100111 K
+b1100111 P
+b1100110 S
+b1100111 W
+b1100111 Q
+1J
+1#
+#52250000
+0J
+0#
+#52500000
+b1101000 5
+b1101000 K
+b1101000 P
+b1100111 U
+b1100111 R
+b1101000 W
+b1101000 Q
+b1100111 S
+1J
+1#
+#52750000
+0J
+0#
+#53000000
+b1101000 U
+b1101000 R
+b1101001 5
+b1101001 K
+b1101001 P
+b1101000 S
+b1101001 W
+b1101001 Q
+1J
+1#
+#53250000
+0J
+0#
+#53500000
+b1101010 5
+b1101010 K
+b1101010 P
+b1101001 U
+b1101001 R
+b1101010 W
+b1101010 Q
+b1101001 S
+1J
+1#
+#53750000
+0J
+0#
+#54000000
+b1101010 U
+b1101010 R
+b1101011 5
+b1101011 K
+b1101011 P
+b1101010 S
+b1101011 W
+b1101011 Q
+1J
+1#
+#54250000
+0J
+0#
+#54500000
+b1101100 5
+b1101100 K
+b1101100 P
+b1101011 U
+b1101011 R
+b1101100 W
+b1101100 Q
+b1101011 S
+1J
+1#
+#54750000
+0J
+0#
+#55000000
+b1101100 U
+b1101100 R
+b1101101 5
+b1101101 K
+b1101101 P
+b1101100 S
+b1101101 W
+b1101101 Q
+1J
+1#
+#55250000
+0J
+0#
+#55500000
+b1101110 5
+b1101110 K
+b1101110 P
+b1101101 U
+b1101101 R
+b1101110 W
+b1101110 Q
+b1101101 S
+1J
+1#
+#55750000
+0J
+0#
+#56000000
+b1101110 U
+b1101110 R
+b1101111 5
+b1101111 K
+b1101111 P
+b1101110 S
+b1101111 W
+b1101111 Q
+1J
+1#
+#56250000
+0J
+0#
+#56500000
+b1110000 5
+b1110000 K
+b1110000 P
+b1101111 U
+b1101111 R
+b1110000 W
+b1110000 Q
+b1101111 S
+1J
+1#
+#56750000
+0J
+0#
+#57000000
+b1110000 U
+b1110000 R
+b1110001 5
+b1110001 K
+b1110001 P
+b1110000 S
+b1110001 W
+b1110001 Q
+1J
+1#
+#57250000
+0J
+0#
+#57500000
+b1110010 5
+b1110010 K
+b1110010 P
+b1110001 U
+b1110001 R
+b1110010 W
+b1110010 Q
+b1110001 S
+1J
+1#
+#57750000
+0J
+0#
+#58000000
+b1110010 U
+b1110010 R
+b1110011 5
+b1110011 K
+b1110011 P
+b1110010 S
+b1110011 W
+b1110011 Q
+1J
+1#
+#58250000
+0J
+0#
+#58500000
+b1110100 5
+b1110100 K
+b1110100 P
+b1110011 U
+b1110011 R
+b1110100 W
+b1110100 Q
+b1110011 S
+1J
+1#
+#58750000
+0J
+0#
+#59000000
+b1110100 U
+b1110100 R
+b1110101 5
+b1110101 K
+b1110101 P
+b1110100 S
+b1110101 W
+b1110101 Q
+1J
+1#
+#59250000
+0J
+0#
+#59500000
+b1110110 5
+b1110110 K
+b1110110 P
+b1110101 U
+b1110101 R
+b1110110 W
+b1110110 Q
+b1110101 S
+1J
+1#
+#59750000
+0J
+0#
+#60000000
+b1110110 U
+b1110110 R
+b1110111 5
+b1110111 K
+b1110111 P
+b1110110 S
+b1110111 W
+b1110111 Q
+1J
+1#
+#60250000
+0J
+0#
+#60500000
+b1111000 5
+b1111000 K
+b1111000 P
+b1110111 U
+b1110111 R
+b1111000 W
+b1111000 Q
+b1110111 S
+1J
+1#
+#60750000
+0J
+0#
+#61000000
+b1111000 U
+b1111000 R
+b1111001 5
+b1111001 K
+b1111001 P
+b1111000 S
+b1111001 W
+b1111001 Q
+1J
+1#
+#61250000
+0J
+0#
+#61500000
+b1111010 5
+b1111010 K
+b1111010 P
+b1111001 U
+b1111001 R
+b1111010 W
+b1111010 Q
+b1111001 S
+1J
+1#
+#61750000
+0J
+0#
+#62000000
+b1111010 U
+b1111010 R
+b1111011 5
+b1111011 K
+b1111011 P
+b1111010 S
+b1111011 W
+b1111011 Q
+1J
+1#
+#62250000
+0J
+0#
+#62500000
+b1111100 5
+b1111100 K
+b1111100 P
+b1111011 U
+b1111011 R
+b1111100 W
+b1111100 Q
+b1111011 S
+1J
+1#
+#62750000
+0J
+0#
+#63000000
+b1111100 U
+b1111100 R
+b1111101 5
+b1111101 K
+b1111101 P
+b1111100 S
+b1111101 W
+b1111101 Q
+1J
+1#
+#63250000
+0J
+0#
+#63500000
+b1111110 5
+b1111110 K
+b1111110 P
+b1111101 U
+b1111101 R
+b1111110 W
+b1111110 Q
+b1111101 S
+1J
+1#
+#63750000
+0J
+0#
+#64000000
+b1111110 U
+b1111110 R
+b1111111 5
+b1111111 K
+b1111111 P
+b1111110 S
+b1111111 W
+b1111111 Q
+1J
+1#
+#64250000
+0J
+0#
+#64500000
+b10000000 5
+b10000000 K
+b10000000 P
+b1111111 U
+b1111111 R
+b10000000 W
+b10000000 Q
+b1111111 S
+1J
+1#
+#64750000
+0J
+0#
+#65000000
+b10000000 U
+b10000000 R
+b10000001 5
+b10000001 K
+b10000001 P
+b10000000 S
+b10000001 W
+b10000001 Q
+1J
+1#
+#65250000
+0J
+0#
+#65500000
+b10000010 5
+b10000010 K
+b10000010 P
+b10000001 U
+b10000001 R
+b10000010 W
+b10000010 Q
+b10000001 S
+1J
+1#
+#65750000
+0J
+0#
+#66000000
+b10000010 U
+b10000010 R
+b10000011 5
+b10000011 K
+b10000011 P
+b10000010 S
+b10000011 W
+b10000011 Q
+1J
+1#
+#66250000
+0J
+0#
+#66500000
+b10000100 5
+b10000100 K
+b10000100 P
+b10000011 U
+b10000011 R
+b10000100 W
+b10000100 Q
+b10000011 S
+1J
+1#
+#66750000
+0J
+0#
+#67000000
+b10000100 U
+b10000100 R
+b10000101 5
+b10000101 K
+b10000101 P
+b10000100 S
+b10000101 W
+b10000101 Q
+1J
+1#
+#67250000
+0J
+0#
+#67500000
+b10000110 5
+b10000110 K
+b10000110 P
+b10000101 U
+b10000101 R
+b10000110 W
+b10000110 Q
+b10000101 S
+1J
+1#
+#67750000
+0J
+0#
+#68000000
+b10000110 U
+b10000110 R
+b10000111 5
+b10000111 K
+b10000111 P
+b10000110 S
+b10000111 W
+b10000111 Q
+1J
+1#
+#68250000
+0J
+0#
+#68500000
+b10001000 5
+b10001000 K
+b10001000 P
+b10000111 U
+b10000111 R
+b10001000 W
+b10001000 Q
+b10000111 S
+1J
+1#
+#68750000
+0J
+0#
+#69000000
+b10001000 U
+b10001000 R
+b10001001 5
+b10001001 K
+b10001001 P
+b10001000 S
+b10001001 W
+b10001001 Q
+1J
+1#
+#69250000
+0J
+0#
+#69500000
+b10001010 5
+b10001010 K
+b10001010 P
+b10001001 U
+b10001001 R
+b10001010 W
+b10001010 Q
+b10001001 S
+1J
+1#
+#69750000
+0J
+0#
+#70000000
+b10001010 U
+b10001010 R
+b10001011 5
+b10001011 K
+b10001011 P
+b10001010 S
+b10001011 W
+b10001011 Q
+1J
+1#

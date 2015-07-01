@@ -19,7 +19,7 @@ assign concatenation2 = {5'b00000,wBranchAddress[4],wBranchAddress[3],wBranchAdd
 	UPCOUNTER_POSEDGE IP(
 	.Clock(Clock), 
 	.Reset(Reset | wBranchTaken ),
-	.Initial(wInitialIP + 10'b1),
+	.Initial(wInitialIP + 10'b0),
 	.Enable(1'b1),
 	.Q(wIP_temp)
 	);
