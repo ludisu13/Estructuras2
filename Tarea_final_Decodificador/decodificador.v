@@ -1,10 +1,10 @@
 //`include "definitions.v"
 module decodificador(
-	input wire Clock,
+	input wire 		Clock,
 	input 	wire[15:0] 	wInstruction,
 	input 	wire 		wZa, wZb, wCa, wCb, wNa, wNb,
 	output reg 		rBranch_taken,
-	output reg 		rJumpTaken,
+	output reg 		rJumpTaken;
 	output reg[9:0] 	rBranch_dir,
 	//output reg[7:0] 	rA,
 	//output reg[7:0] 	rB,
