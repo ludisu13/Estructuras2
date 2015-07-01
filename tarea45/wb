@@ -1,0 +1,28 @@
+#! /c/iverilog/bin/vvp
+:ivl_version "0.9.7 " "(v0_9_7)";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_009931D8 .scope module, "WBX" "WBX" 2 1;
+ .timescale 0 0;
+L_00995198 .functor OR 1, C4<z>, C4<z>, C4<0>, C4<0>;
+v00993260_0 .net *"_s0", 0 0, L_00995198; 1 drivers
+v009932B8_0 .net *"_s2", 7 0, L_0099E668; 1 drivers
+v00994F88_0 .net *"_s5", 6 0, C4<0000000>; 1 drivers
+v00994FE0_0 .net *"_s6", 7 0, L_0099EAF8; 1 drivers
+v00995038_0 .net "iDataALU", 7 0, C4<zzzzzzzz>; 0 drivers
+v00995090_0 .net "iDataRAM", 7 0, C4<zzzzzzzz>; 0 drivers
+v009950E8_0 .net "iDataRam", 0 0, C4<z>; 0 drivers
+v00995140_0 .net "iReadA", 0 0, C4<z>; 0 drivers
+v0099E560_0 .net "iRegister", 7 0, C4<zzzzzzzz>; 0 drivers
+v0099E5B8_0 .net "iWriteA", 0 0, C4<z>; 0 drivers
+v0099E610_0 .net "oRegister", 7 0, L_0099EB50; 1 drivers
+L_0099E668 .concat [ 1 7 0 0], C4<z>, C4<0000000>;
+L_0099EAF8 .functor MUXZ 8, C4<zzzzzzzz>, L_0099E668, C4<z>, C4<>;
+L_0099EB50 .functor MUXZ 8, C4<zzzzzzzz>, L_0099EAF8, L_00995198, C4<>;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "WB.v";
