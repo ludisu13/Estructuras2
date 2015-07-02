@@ -24,7 +24,7 @@ begin
 		rMux_b_sel<=0;
 		rBranch_taken<=0;
 		rBranch_dir<=10'b0;
-		rC<=6'b0;
+		rC<=8'b0;
 	end
 	
 	`LDB:
@@ -34,7 +34,7 @@ begin
 		rMux_b_sel<=0;
 		rBranch_taken<=0;
 		rBranch_dir<=10'b0;
-		rC<=6'b0;
+		rC<=8'b0;
 	end
 	
 	`STA:
@@ -44,7 +44,7 @@ begin
 		rMux_b_sel<=0;
 		rBranch_taken<=0;
 		rBranch_dir<=10'b0;
-		rC<=6'b0;
+		rC<=8'b0;
 	end
 	
 	`STB:
@@ -54,7 +54,7 @@ begin
 		rMux_b_sel<=0;
 		rBranch_taken<=0;
 		rBranch_dir<=10'b0;
-		rC<=6'b0;
+		rC<=8'b0;
 	end
 	
 	`ADDA:
@@ -64,7 +64,7 @@ begin
 		rMux_b_sel<=0;
 		rBranch_taken<=0;
 		rBranch_dir<=10'b0;
-		rC<=6'b0;
+		rC<=8'b0;
 	end
 	
 	`ADDB:
@@ -74,7 +74,7 @@ begin
 		rMux_b_sel<=0;
 		rBranch_taken<=0;
 		rBranch_dir<=10'b0;
-		rC<=6'b0;
+		rC<=8'b0;
 	end
 	
 	`SUBA:
@@ -84,7 +84,7 @@ begin
 		rMux_b_sel<=0;
 		rBranch_taken<=0;
 		rBranch_dir<=10'b0;
-		rC<=6'b0;
+		rC<=8'b0;
 	end
 	
 	`SUBB:
@@ -94,7 +94,7 @@ begin
 		rMux_b_sel<=0;
 		rBranch_taken<=0;
 		rBranch_dir<=10'b0;
-		rC<=6'b0;
+		rC<=8'b0;
 	end
 	
 	`ANDA:
@@ -104,7 +104,7 @@ begin
 		rMux_b_sel<=0;
 		rBranch_taken<=0;
 		rBranch_dir<=10'b0;
-		rC<=6'b0;
+		rC<=8'b0;
 	end
 	
 	`ANDB:
@@ -114,7 +114,7 @@ begin
 		rMux_b_sel<=0;
 		rBranch_taken<=0;
 		rBranch_dir<=10'b0;
-		rC<=6'b0;
+		rC<=8'b0;
 	end
 	
 	`ORA:
@@ -124,7 +124,7 @@ begin
 		rMux_b_sel<=0;
 		rBranch_taken<=0;
 		rBranch_dir<=10'b0;
-		rC<=6'b0;
+		rC<=8'b0;
 	end
 	
 	`ORB:
@@ -134,7 +134,7 @@ begin
 		rMux_b_sel<=0;
 		rBranch_taken<=0;
 		rBranch_dir<=10'b0;
-		rC<=6'b0;
+		rC<=8'b0;
 	end
 	
 	`ASLA:
@@ -144,7 +144,7 @@ begin
 		rMux_b_sel<=0;
 		rBranch_taken<=0;
 		rBranch_dir<=10'b0;
-		rC<=6'b0;
+		rC<=8'b0;
 	end
 	
 	`ASRA:
@@ -154,7 +154,7 @@ begin
 		rMux_b_sel<=0;
 		rBranch_taken<=0;
 		rBranch_dir<=10'b0;
-		rC<=6'b0;
+		rC<=8'b0;
 	end
 	
 	`LDCA:
@@ -265,7 +265,7 @@ begin
 		rBranch_taken<=0;
 		rJumpTaken<=1;
 		rBranch_dir<=wInstruction[9:0];	
-		rC<=6'b0;		
+		rC<=8'b0;		
 	end
 	
 	`BAEQ:
@@ -273,7 +273,7 @@ begin
 		rJumpTaken<=0;
 		rMux_a_sel<=0;
 		rMux_b_sel<=0;
-		rC<=6'b0;
+		rC<=8'b0;
 		if(wZa==1)
 		begin
 			rBranch_taken<=1;
@@ -288,7 +288,7 @@ begin
 		rJumpTaken<=0;
 		rMux_a_sel<=0;
 		rMux_b_sel<=0;
-		rC<=6'b0;
+		rC<=8'b0;
 		if(wZa==0)
 		begin
 			rBranch_taken<=1;
@@ -303,7 +303,7 @@ begin
 		rJumpTaken<=0;
 		rMux_a_sel<=0;
 		rMux_b_sel<=0;
-		rC<=6'b0;
+		rC<=8'b0;
 		if(wCa==1)
 		begin
 			rBranch_taken<=1;
@@ -318,7 +318,7 @@ begin
 		rJumpTaken<=0;
 		rMux_a_sel<=0;
 		rMux_b_sel<=0;
-		rC<=6'b0;
+		rC<=8'b0;
 		if(wCa==0)
 		begin
 			rBranch_taken<=1;
@@ -333,7 +333,7 @@ begin
 		rJumpTaken<=0;
 		rMux_a_sel<=0;
 		rMux_b_sel<=0;
-		rC<=6'b0;
+		rC<=8'b0;
 		if(wNa==1)
 		begin
 			rBranch_taken<=1;
@@ -348,7 +348,7 @@ begin
 		rJumpTaken<=0;
 		rMux_a_sel<=0;
 		rMux_b_sel<=0;	
-		rC<=6'b0;
+		rC<=8'b0;
 		if(wNa==0)
 		begin
 			rBranch_taken<=1;
@@ -363,7 +363,7 @@ begin
 		rJumpTaken<=0;
 		rMux_a_sel<=0;
 		rMux_b_sel<=0;
-		rC<=6'b0;
+		rC<=8'b0;
 		if(wZb==1)
 		begin
 			rBranch_taken<=1;
@@ -378,7 +378,7 @@ begin
 		rJumpTaken<=0;
 		rMux_a_sel<=0;
 		rMux_b_sel<=0;
-		rC<=6'b0;
+		rC<=8'b0;
 		if(wZb==0)
 		begin
 			rBranch_taken<=1;
@@ -393,7 +393,7 @@ begin
 		rJumpTaken<=0;
 		rMux_a_sel<=0;
 		rMux_b_sel<=0;
-		rC<=6'b0;
+		rC<=8'b0;
 		if(wCb==1)
 		begin
 			rBranch_taken<=1;
@@ -408,7 +408,7 @@ begin
 		rJumpTaken<=0;
 		rMux_a_sel<=0;
 		rMux_b_sel<=0;
-		rC<=6'b0;
+		rC<=8'b0;
 		if(wCb==0)
 		begin
 			rBranch_taken<=1;
@@ -423,7 +423,7 @@ begin
 		rJumpTaken<=0;
 		rMux_a_sel<=0;
 		rMux_b_sel<=0;
-		rC<=6'b0;
+		rC<=8'b0;
 		if(wNb==1)
 		begin
 			rBranch_taken<=1;
@@ -438,7 +438,7 @@ begin
 		rJumpTaken<=0;
 		rMux_a_sel<=0;
 		rMux_b_sel<=0;
-		rC<=6'b0;
+		rC<=8'b0;
 		if(wNb==0)
 		begin
 			rBranch_taken<=1;
