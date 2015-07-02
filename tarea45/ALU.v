@@ -20,7 +20,7 @@ reg [8:0]rEx;
 assign oData=rEx;
 always @ ( * )
 	begin
-		case(wInstruction)
+		case(wInstruction[15:10])
 			`ADDA:
 				begin
 				rEx=iA+iB;
@@ -272,7 +272,7 @@ always @ ( * )
 				end
 			`LDCA:
 				begin
-				rEx=iA;
+				rEx=iA[7:0];
 				wCa<=wCa;
 				oRamAddress=wInstruction[9:0];
 				oRamEnableWrite<=1'b0;
@@ -284,7 +284,7 @@ always @ ( * )
 				end
 			`LDCB:
 				begin
-				rEx=iB;
+				rEx=iB[7:0];
 				wCa<=wCa;
 				oRamAddress=wInstruction[9:0];
 				oRamEnableWrite<=1'b0;

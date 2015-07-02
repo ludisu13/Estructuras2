@@ -4,7 +4,7 @@ module decodificador(
 	input 	wire[15:0] 	wInstruction,
 	input 	wire 		wZa, wZb, wCa, wCb, wNa, wNb,
 	output reg 		rBranch_taken,
-	output reg 		rJumpTaken;
+	output reg 		rJumpTaken,
 	output reg[9:0] 	rBranch_dir,
 	//output reg[7:0] 	rA,
 	//output reg[7:0] 	rB,
@@ -13,9 +13,9 @@ module decodificador(
 	output reg 		rMux_b_sel
 );
 
-always @(posedge Clock)
+always @( posedge Clock)
 begin
-	case(wInstruction[15:0])
+	case(wInstruction[15:10])
 	
 	`LDA:
 	begin

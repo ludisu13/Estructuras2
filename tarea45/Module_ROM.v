@@ -6,7 +6,7 @@ module ROM
 	output reg [15:0] 		oInstruction
 );	
 reg [15:0] Memory [10:0];
-initial $readmemh("instructions.txt",Memory);
+initial $readmemh("test.txt",Memory);
 always @ ( iAddress )
 begin
 	oInstruction=Memory[iAddress];
