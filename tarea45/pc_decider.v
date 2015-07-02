@@ -18,23 +18,23 @@ assign concatenation2 = {5'b00000,wBranchAddress[4],wBranchAddress[3],wBranchAdd
 	
 	UPCOUNTER_POSEDGE IP(
 	.Clock(Clock), 
-	.Reset(Reset | wBranchTaken ),
+	.Reset(Reset | wBranchTaken |wJumpTaken),
 	.Initial(wInitialIP + 10'b0),
 	.Enable(1'b1),
 	.Q(wIP_temp)
 	);
 	
 	
-	always @(posedge Clock )
+	always @(*)
 	begin
 	if(wJumpTaken)
-		wDestination = wBranchAddress;
+		wDestination <= wBranchAddress;
 	else if(wBranchTaken)
 		if( wBranchAddress[5])
-			wDestination = wIP - concatenation1;
+			wDestination <= wIP_temp - concatenation1;
 			
 		if( ~wBranchAddress[5]) 
-			wDestination = wIP + concatenation2;
+			wDestination <= wIP_temp + concatenation2;
 			
 	
 	end
