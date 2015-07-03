@@ -1,0 +1,13 @@
+*************************README*****************************
+Este archivo detalla la forma en la cual se debe compilar y ejecutar el procesador con pipeline implementado en Verilog.
+Debe asegurarse de tener instalado Icarus Verilog y el visor de ondas GTKwave.
+
+Luego de esto debe hacer el comando make en una terminal, lo cual compilará los archivos del pipeline
+Utilizando el comando make signals se podra observar las senales en GTKwave.
+
+**************************
+Creado por:
+**************************
+Arquitecto: Luis Diego Soto Ugalde. B26613
+Diseñador: Erick Josué Eduarte Rojas. B22305
+Verificador: Juan Diego Sánchez Brenes. B16068 

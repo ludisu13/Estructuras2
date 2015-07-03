@@ -165,7 +165,7 @@ begin
 		rMux_a_sel<=1;
 		rMux_b_sel<=0;
 		rBranch_taken<=0;
-		rBranch_dir<=10'b0;
+		rBranch_dir<=10'd1;
 		rC=wInstruction[7:0];
 	end
 	

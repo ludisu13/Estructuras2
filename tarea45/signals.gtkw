@@ -1,0 +1,23 @@
+[*]
+[*] GTKWave Analyzer v3.3.37 (w)1999-2012 BSI
+[*] Fri Jul  3 04:40:33 2015
+[*]
+[dumpfile] "/home/diego/Documents/Estructuras2/tarea45/signals.vcd"
+[dumpfile_mtime] "Fri Jul  3 04:39:26 2015"
+[dumpfile_size] 24068
+[savefile] "/home/diego/Documents/Estructuras2/tarea45/signals.gtkw"
+[timestart] 0
+[size] 1000 600
+[pos] -1 -1
+*-21.502584 2000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] BancoPruebas.
+[sst_width] 224
+[signals_width] 174
+[sst_expanded] 1
+[sst_vpaned_height] 145
+@22
+BancoPruebas.r1.iAddress[9:0]
+@23
+BancoPruebas.r1.oInstruction[15:0]
+[pattern_trace] 1
+[pattern_trace] 0
