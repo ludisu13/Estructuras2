@@ -1,4 +1,8 @@
-//`include "definitions.v"
+/*Este modulo tiene como funcion principal tomar las instrucciones y decidir si se debe continuar el flujo normal del programa
+o hacer algun salto, ademas le da la informacion adicional a otros modulos sobre que hacer, como la direccion donde se debe
+saltar o si se debe operar con constantes en vez de los registros de uso general, y tambien en caso de saltos relativos la 
+direccion del salto y la cantidad de espacios en memoria que se debe saltar.
+*/
 module decodificador(
 	input wire 		Clock,
 	input 	wire[15:0] 	wInstruction,
@@ -6,8 +10,6 @@ module decodificador(
 	output reg 		rBranch_taken,
 	output reg 		rJumpTaken,
 	output reg[9:0] 	rBranch_dir,
-	//output reg[7:0] 	rA,
-	//output reg[7:0] 	rB,
 	output reg[7:0] 	rC,
 	output reg 		rMux_a_sel,
 	output reg 		rMux_b_sel

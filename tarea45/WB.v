@@ -1,3 +1,7 @@
+/*
+	 Este bloque esta encargado de actualizar en la última etapa del pipeline los registros de uso general.
+*/
+
 module WBX(
 
 input wire iRead,//viene de la ram

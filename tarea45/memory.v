@@ -1,3 +1,8 @@
+/* 
+	Esta es la memoria principal de datos del procesador. 
+
+*/
+
 `timescale 1ns / 1ps
 
 module MEMORY	 # ( parameter DATA_WIDTH= 8, parameter ADDR_WIDTH=10, parameter MEM_SIZE=1024 )

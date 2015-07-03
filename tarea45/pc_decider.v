@@ -1,3 +1,9 @@
+/*
+	Este módulo decide el siguiente program counter del programa en caso de serguir el flujo normal 
+	del programa incrementa en uno el valor, en caso de haber un branch toma la dirección del branch
+	 y comienza desde esa posición.
+*/
+
 module pc_Decider(
 input wire Clock,
 input wire Reset,

@@ -1,4 +1,6 @@
-//`include "decodificador.v"
+/*
+	Multiplexor de 2x1 con tama;o parametrizable de las entradas
+*/
 module Mux2 # ( parameter SIZE=6 )
 (
 	input wire				wSelect,
@@ -15,21 +17,3 @@ always @(wSelect)
 			rOut<=wA;
 	end
 endmodule
-
-/*
-
-Mux2 #(8) Mux_A
-(
-	.wSelect(rMux_a_sel),
-	.wA(),
-	.wB(rC),
-	.rOut()
-);
-
-Mux2 #(8) Mux_B
-(
-	.wSelect(rMux_b_sel),
-	.wA(),
-	.wB(rC),
-	.rOut()
-);*/

@@ -1,3 +1,8 @@
+/*
+	FlipFlop D de tama;o variable
+
+*/
+
 module FFD_POSEDGE_SYNCRONOUS_RESET # ( parameter SIZE=8 )
 (
 	input wire				Clock,
