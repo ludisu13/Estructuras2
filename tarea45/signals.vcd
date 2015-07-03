@@ -1,5 +1,5 @@
 $date
-	Thu Jul  2 23:00:58 2015
+	Thu Jul  2 23:07:48 2015
 $end
 $version
 	Icarus Verilog
@@ -71,7 +71,7 @@ $var wire 10 Q wIP [9:0] $end
 $var wire 10 R wIP_temp [9:0] $end
 $var wire 10 S wInitialIP [9:0] $end
 $var wire 1 > wJumpTaken $end
-$var reg 10 T p [9:0] $end
+$var reg 10 T rTemp [9:0] $end
 $scope module IP $end
 $var wire 1 # Clock $end
 $var wire 1 U Enable $end
