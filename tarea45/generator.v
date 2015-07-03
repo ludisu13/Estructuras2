@@ -1,4 +1,4 @@
-module generator(clock,reset);
+module generator(clock,reset); //Module encargado de generar la señal de reloj y el reset
 output wire clock;
 output reg reset;
 clk reloj(clock);

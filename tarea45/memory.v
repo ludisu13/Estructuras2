@@ -4,7 +4,7 @@
 */
 
 `timescale 1ns / 1ps
-
+//Memoria de datos, es el bloque encargado de almacenar los resultados de las operaciones lógico aritméticas procedentes de la ALU
 module MEMORY	 # ( parameter DATA_WIDTH= 8, parameter ADDR_WIDTH=10, parameter MEM_SIZE=1024 )
 (
 	input wire						Clock,

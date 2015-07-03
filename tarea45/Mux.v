@@ -1,5 +1,5 @@
 /*
-	Multiplexor de 2x1 con tama;o parametrizable de las entradas
+	Multiplexor de 2x1 con tamaño parametrizable de las entradas
 */
 module Mux2 # ( parameter SIZE=6 )
 (
