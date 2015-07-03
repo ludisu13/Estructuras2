@@ -1,6 +1,6 @@
 /*
 	Este modulo esta encargado de ejecutar las operaciones principales que cada instruccion debe realizar
-	ademas es el que envia los datos y la direccion a la memoria de datos para ser almacenados en esta.
+	ademas es el que envia los datos y la direccion a la memoria de datos para ser almacenados.
 	
 */
 
